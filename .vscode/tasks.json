@@ -1,0 +1,437 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Compilar",
+      "command": "gcc",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-Wall",
+        "-pg",
+        "-no-pie",
+        "-w",
+        "${workspaceFolder}/main.c",
+        "-o",
+        "${workspaceFolder}/main.exe",
+        "-I${workspaceFolder}/src",
+        "-I${workspaceFolder}/tests",
+        "${workspaceFolder}/src/*.c",
+        "${workspaceFolder}/tests/*.c",
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "gcc",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true,
+        "close": false
+      }
+    },
+    {
+      "label": "object_resonant_control",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/resonant_control.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/resonant_control.o",
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "object_power_control",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/power_control.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/power_control.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "object_rms",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/rms.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/rms.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "object_sogi_qsg",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/sogi_qsg.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/sogi_qsg.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "object_droop",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/droop.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/droop.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "object_virtual_impedance",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/virtual_impedance.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/virtual_impedance.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "object_apf",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-w",
+        "-c",
+        "${workspaceFolder}/src/all_pass_filter.c",
+        "-o",
+        "${workspaceFolder}/output/VHIL/all_pass_filter.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_resonant_control",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_resonant_control.dll",
+        "${workspaceFolder}/output/VHIL/resonant_control.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_power_control",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_power_control.dll",
+        "${workspaceFolder}/output/VHIL/power_control.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_rms",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_rms.dll",
+        "${workspaceFolder}/output/VHIL/rms.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_sogi_qsg",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_sogi_qsg.dll",
+        "${workspaceFolder}/output/VHIL/sogi_qsg.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_droop",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_droop.dll",
+        "${workspaceFolder}/output/VHIL/droop.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_virtual_impedance",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_virtual_impedance.dll",
+        "${workspaceFolder}/output/VHIL/virtual_impedance.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "dll_apf",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-shared",
+        "-o",
+        "${workspaceFolder}/output/VHIL/lib_all_pass_filter.dll",
+        "${workspaceFolder}/output/VHIL/all_pass_filter.o"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "type": "shell",
+      "label": "Compilar para VHIL",
+      "command": "echo",
+      "args": [
+        "Todas as DLLs foram compilada para o VHIL. Por favor verifique a concordância entre o arquivos de header e o HIL Controler Center."
+      ],
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "object_resonant_control",
+        "dll_resonant_control",
+        "object_power_control",
+        "dll_power_control",
+        "object_rms",
+        "dll_rms",
+        "object_sogi_qsg",
+        "dll_sogi_qsg",
+        "object_droop",
+        "dll_droop",
+        "object_virtual_impedance",
+        "dll_virtual_impedance",
+        "object_apf",
+        "dll_apf",
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      }
+    }
+  ]
+}

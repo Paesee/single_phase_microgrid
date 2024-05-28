@@ -1,0 +1,2327 @@
+<ui_settings>
+    <version>2.8</version>
+    <model_locked>False</model_locked>
+    <canvas_bg_color>#ffffff</canvas_bg_color>
+    <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts.
+# NOTE: This code is always executed prior simulation start.
+
+# Variable 'SETTINGS_DIR' holds directory where loaded Panel .cus file is located.
+# Also you can call 'get_settings_dir_path()' function in any
+# Macro and Expression scripts to get the same directory.
+SETTINGS_DIR = get_settings_dir_path()
+
+# The 'add_to_python_path(folder)' function can be used to add custom folder
+# with Python files and packages to the PYTHONPATH. After folder is added, all Python 
+# files and Python packages from it can be imported into the SCADA Namespace.
+
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# Numpy module is imported as 'np'
+# Scipy module is imported as 'sp'
+# Schematic Editor model namespace is imported as 'scm'
+# Function for printing to HIL SCADA Message log is imported as 'printf'.
+
+]]></initialization_code>
+    <components>
+        <component_data>
+                <id>0e303c6e50c911eab33dace01076f1b0</id>
+                <name><![CDATA[Capture_Scope]]></name>
+                <type>Capture/Scope</type>
+                <description><![CDATA[]]></description>
+                <working_mode>windowed</working_mode>
+                <widget_settings>
+                    <x>2288</x>
+                    <y>416</y>
+                    <width>120</width>
+                    <height>120</height>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <state>Capture</state>
+                    <layout>None</layout>
+                    <virtual_signals_definitions>
+                    </virtual_signals_definitions>
+                    <presets>
+                        <active_capture_preset><![CDATA[Analysis_1]]></active_capture_preset>
+                        <active_scope_preset><![CDATA[Grid Connected]]></active_scope_preset>
+                        <capture name="Default">
+                            <time_interval>1.0</time_interval>
+                            <sample_rate>1000000.0</sample_rate>
+                            <background_color>white</background_color>
+                            <layout>Vertical</layout>
+                            <legend>True</legend>
+                            <analog_signals>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <virtual_signals>
+                            </virtual_signals>
+                            <trigger>
+                                <device>-1</device>
+                                <is_force>False</is_force>
+                                <type>Analog</type>
+                                <source><![CDATA[None]]></source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.0</treshold>
+                                <offset>0.0</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                            <plotting_options in_use="False">
+                                <subplots>
+                                    </subplots>
+                            </plotting_options>
+                        </capture>
+                        <capture name="Analysis_1">
+                            <time_interval>2.0</time_interval>
+                            <sample_rate>1000000.0</sample_rate>
+                            <background_color>white</background_color>
+                            <layout>Vertical</layout>
+                            <legend>True</legend>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_Q]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_P]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[VSC1.VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[VSC1.REF_VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[VSC1.IL2]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <virtual_signals>
+                            </virtual_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>True</is_force>
+                                <type>Analog</type>
+                                <source><![CDATA[VSC1.Meter.POWER_Q]]></source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.0</treshold>
+                                <offset>0.0</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                            <plotting_options in_use="False">
+                                <subplots>
+                                    </subplots>
+                            </plotting_options>
+                        </capture>
+                        <scope name="Grid Connected">
+                            <background_color>white</background_color>
+                            <layout>Vertical</layout>
+                            <legend>True</legend>
+                            <show_viewports>2</show_viewports>
+                            <decimation>6</decimation>
+                            <time_base>0.005</time_base>
+                            <analog_signals>
+                                <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[VSC1.REF_VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[VSC1.VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[MGCC.Vpcc]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_P]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                                <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_Q]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                            </analog_signals>
+                            <digital_signals>
+                            </digital_signals>
+                            <trigger>
+                                <device>0</device>
+                                <is_force>False</is_force>
+                                <type>Analog</type>
+                                <source>VSC1.REF_VC</source>
+                                <edge>Rising edge</edge>
+                                <treshold>0.0</treshold>
+                                <offset>50.0</offset>
+                                <useFirstTrigger>False</useFirstTrigger>
+                            </trigger>
+                        </scope>
+                        </presets>
+                    <capture>
+                        <time_interval>2.0</time_interval>
+                        <sample_rate>1000000.0</sample_rate>
+                        <background_color>white</background_color>
+                        <layout>Vertical</layout>
+                        <legend>True</legend>
+                        <trigger>
+                            <type>Analog</type>
+                            <source>VSC1.Meter.POWER_Q</source>
+                            <edge>Rising edge</edge>
+                            <treshold>0.0</treshold>
+                            <offset>0.0</offset>
+                            <useFirstTrigger>False</useFirstTrigger>
+                        </trigger>
+                        <analog_signals>
+                            <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_Q]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_P]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[VSC1.VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[VSC1.REF_VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[VSC1.IL2]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>3</num_viewport>
+                                   </viewports>
+                               </analog>
+                        </analog_signals>
+                         <digital_signals>
+                         </digital_signals>
+                    </capture>
+                    <scope>
+                        <time_base>0.005 </time_base>
+                        <background_color>white</background_color>
+                        <layout>Vertical</layout>
+                        <legend>True</legend>
+                        <trigger>
+                            <mode>Auto</mode>
+                            <type>Analog</type>
+                            <source>VSC1.REF_VC</source>
+                            <edge>Rising edge</edge>
+                            <treshold>0.0</treshold>
+                            <offset>50.0</offset>
+                        </trigger>
+                         <analog_signals>
+                            <analog>
+                                    <channel>0</channel>
+                                    <name><![CDATA[VSC1.REF_VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>0</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>1</channel>
+                                    <name><![CDATA[VSC1.VC]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0.0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>1</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>2</channel>
+                                    <name><![CDATA[MGCC.Vpcc]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>2</row>
+                                    <viewports>
+                                        <num_viewport>1</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>3</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_P]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>3</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                            <analog>
+                                    <channel>4</channel>
+                                    <name><![CDATA[VSC1.Meter.POWER_Q]]></name>
+                                    <is_locked>False</is_locked>
+                                    <vertical_scale>Auto</vertical_scale>
+                                    <vertical_offset>0</vertical_offset>
+                                    <coupling>False</coupling>
+                                    <row>4</row>
+                                    <viewports>
+                                        <num_viewport>2</num_viewport>
+                                   </viewports>
+                               </analog>
+                        </analog_signals>
+                        <digital_signals>
+                        </digital_signals>
+                    </scope>
+                    <plotting_options in_use="False">
+                    
+                        <subplots>
+                            </subplots>
+                    </plotting_options>
+                </widget_settings>
+
+            </component_data>
+        <component_data>
+                <id>93d38036d29811eaa7e4e470b8f06319</id>
+                <name><![CDATA[VSC1]]></name>
+                <type>Group</type>
+                <description><![CDATA[]]></description>
+                <components_ids><![CDATA[['fac015720d9f11efad35e39b90c1cbdb', '10ec9d9c0da011efa222e39b90c1cbdb', 'ff001dec0e4311ef8747e39b90c1cbdb', '0cad7f000e4411efa860e39b90c1cbdb']]]></components_ids>
+                <canvas_bg_color>#ffffff</canvas_bg_color>
+                <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts of the components owned by this widget.
+# This code is always executed prior simulation start.
+# HIL API is imported as 'hil'
+]]></initialization_code>
+                <widget_settings>
+                    <x>1632</x>
+                    <y>440</y>
+                    <width>376</width>
+                    <height>136</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <collapsed>False</collapsed>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[VSC1 INTERFACE]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                
+                <linked_model_components_settings>
+                    </linked_model_components_settings>
+            </component_data>
+        <component_data>
+                <id>fac015720d9f11efad35e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_PF]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC1.Meter.POWER_P]]></signal_name>
+                <unit><![CDATA[kW]]></unit>
+                <automatic_unit>False</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>0.001</scaling_factor>
+                <widget_settings>
+                    <x>184</x>
+                    <y>8</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>10ec9d9c0da011efa222e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_QF]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC1.Meter.POWER_Q]]></signal_name>
+                <unit><![CDATA[kVAr]]></unit>
+                <automatic_unit>False</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>0.001</scaling_factor>
+                <widget_settings>
+                    <x>184</x>
+                    <y>48</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>2ecde2d30e4311ef9be5e39b90c1cbdb</id>
+                <name><![CDATA[Image]]></name>
+                <type>Image</type>
+                <description><![CDATA[]]></description>
+                <image><![CDATA[SCADA_background.svg]]></image>
+                <image_scaling><![CDATA[Keep aspect ratio]]></image_scaling>
+                <widget_settings>
+                    <x>1648</x>
+                    <y>360</y>
+                    <width>1500</width>
+                    <height>700</height>
+                    <background_color><![CDATA[#f0f0f0]]></background_color>
+                    <background_type><![CDATA[Transparent]]></background_type>
+                    <is_background>True</is_background>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>ff001dec0e4311ef8747e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_Meter_V_RMS]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC1.Meter.V_RMS]]></signal_name>
+                <unit><![CDATA[V]]></unit>
+                <automatic_unit>True</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>1.0</scaling_factor>
+                <widget_settings>
+                    <x>8</x>
+                    <y>8</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>0cad7f000e4411efa860e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_Meter_I_RMS]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC1.Meter.Freq]]></signal_name>
+                <unit><![CDATA[Hz]]></unit>
+                <automatic_unit>True</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>1.0</scaling_factor>
+                <widget_settings>
+                    <x>8</x>
+                    <y>48</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>59394c6a0e4411ef98fae39b90c1cbdb</id>
+                <name><![CDATA[VSC2]]></name>
+                <type>Group</type>
+                <description><![CDATA[]]></description>
+                <components_ids><![CDATA[['59394c6b0e4411efb240e39b90c1cbdb', '59394c6c0e4411efae7ee39b90c1cbdb', '59397e460e4411ef955be39b90c1cbdb', '59397e470e4411efae82e39b90c1cbdb']]]></components_ids>
+                <canvas_bg_color>#ffffff</canvas_bg_color>
+                <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts of the components owned by this widget.
+# This code is always executed prior simulation start.
+# HIL API is imported as 'hil'
+]]></initialization_code>
+                <widget_settings>
+                    <x>1632</x>
+                    <y>1080</y>
+                    <width>376</width>
+                    <height>136</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <collapsed>False</collapsed>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[VSC2 INTERFACE]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                
+                <linked_model_components_settings>
+                    </linked_model_components_settings>
+            </component_data>
+        <component_data>
+                <id>59394c6b0e4411efb240e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_PF]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC2.Meter.POWER_P]]></signal_name>
+                <unit><![CDATA[kW]]></unit>
+                <automatic_unit>False</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>0.001</scaling_factor>
+                <widget_settings>
+                    <x>184</x>
+                    <y>8</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>59394c6c0e4411efae7ee39b90c1cbdb</id>
+                <name><![CDATA[VSC1_QF]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC2.Meter.POWER_Q]]></signal_name>
+                <unit><![CDATA[kVAr]]></unit>
+                <automatic_unit>False</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>0.001</scaling_factor>
+                <widget_settings>
+                    <x>184</x>
+                    <y>48</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>59397e460e4411ef955be39b90c1cbdb</id>
+                <name><![CDATA[VSC1_Meter_V_RMS]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC2.Meter.V_RMS]]></signal_name>
+                <unit><![CDATA[V]]></unit>
+                <automatic_unit>True</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>1.0</scaling_factor>
+                <widget_settings>
+                    <x>8</x>
+                    <y>8</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>59397e470e4411efae82e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_Meter_I_RMS]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[VSC2.Meter.Freq]]></signal_name>
+                <unit><![CDATA[Hz]]></unit>
+                <automatic_unit>True</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>1.0</scaling_factor>
+                <widget_settings>
+                    <x>8</x>
+                    <y>48</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>7cc294c80e4411efa176e39b90c1cbdb</id>
+                <name><![CDATA[VSC3]]></name>
+                <type>Group</type>
+                <description><![CDATA[]]></description>
+                <components_ids><![CDATA[['ff7359960e4511ef8425e39b90c1cbdb', 'ff7359970e4511ef8cb6e39b90c1cbdb', 'ff7359980e4511efae03e39b90c1cbdb', 'ff7359990e4511efb36be39b90c1cbdb', 'ff73599a0e4511efa301e39b90c1cbdb', 'ff73599b0e4511efa8a9e39b90c1cbdb']]]></components_ids>
+                <canvas_bg_color>#ffffff</canvas_bg_color>
+                <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts of the components owned by this widget.
+# This code is always executed prior simulation start.
+# HIL API is imported as 'hil'
+]]></initialization_code>
+                <widget_settings>
+                    <x>2312</x>
+                    <y>1080</y>
+                    <width>376</width>
+                    <height>328</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <collapsed>False</collapsed>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[LOAD INTERFACE]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                
+                <linked_model_components_settings>
+                    </linked_model_components_settings>
+            </component_data>
+        <component_data>
+                <id>ff7359960e4511ef8425e39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_Pref]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('Load.Single-phase Variable Load.Pref', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('Load.Single-phase Variable Load.Pref')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[1.0]]></inputValue>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>0.05</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>120</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Active Power Consumption (pu)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>ff7359970e4511ef8cb6e39b90c1cbdb</id>
+                <name><![CDATA[Button6]]></name>
+                <type>MacroButton</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+hil.set_scada_input_value('Load.Single-phase Variable Load.Enable', 0)
+hil.wait_msec(10.0)]]></on_use_code>
+                <on_start_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+hil.set_scada_input_value('mgcc_req2tieSR', 0)]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+]]></on_stop_code>
+                <on_start_code_source><![CDATA[Custom code]]></on_start_code_source>
+                <widget_settings>
+                    <x>192</x>
+                    <y>8</y>
+                    <width>128</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Disconnect Load]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>ff7359980e4511efae03e39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_Qref]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('Load.Single-phase Variable Load.Qref', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('Load.Single-phase Variable Load.Qref')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[1.0]]></inputValue>
+                <min>-1.0</min>
+                <max>1.0</max>
+                <step>0.05</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>176</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Reactive Power Consumption (pu)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>ff7359990e4511efb36be39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_ROC]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('Load.Single-phase Variable Load.ROC', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('Load.Single-phase Variable Load.ROC')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[5.0]]></inputValue>
+                <min>0.0</min>
+                <max>5.0</max>
+                <step>0.5</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>232</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Load Rate of Change (pu/s)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>ff73599a0e4511efa301e39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_Enable_fb]]></name>
+                <type>TextDisplay</type>
+                <description><![CDATA[]]></description>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+load_enable_fb = hil.model_read('Load.Single-phase Variable Load.Enable_fb');
+
+if(load_enable_fb == 1):
+    str2display = 'Connected';
+else:
+    str2display = 'Disconnected';
+
+# specify Text Display options ('text' part is mandatory)
+textDisplayData = {
+    # label text
+    "text": str2display,
+    # text color: 'red', 'green', 'blue', 'orange', 'black'
+    "text_color": 'black',
+}
+
+# mandatory variable used for storing value that will be displayed
+displayValue = textDisplayData
+]]></code>
+                <updateRate>500</updateRate>
+                <widget_settings>
+                    <x>88</x>
+                    <y>56</y>
+                    <width>200</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Load Status]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>ff73599b0e4511efa8a9e39b90c1cbdb</id>
+                <name><![CDATA[Button5]]></name>
+                <type>MacroButton</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+hil.set_scada_input_value('Load.Single-phase Variable Load.Enable', 1)
+hil.wait_msec(10.0)]]></on_use_code>
+                <on_start_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+hil.set_scada_input_value('mgcc_req2tieSR', 0)]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+]]></on_stop_code>
+                <on_start_code_source><![CDATA[Custom code]]></on_start_code_source>
+                <widget_settings>
+                    <x>48</x>
+                    <y>8</y>
+                    <width>128</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Connect Load]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>2eb19da00e4711ef9fd7e39b90c1cbdb</id>
+                <name><![CDATA[VSC4]]></name>
+                <type>Group</type>
+                <description><![CDATA[]]></description>
+                <components_ids><![CDATA[['b18f97660e4811efaaf5e39b90c1cbdb', 'b18f97670e4811ef9dbfe39b90c1cbdb', 'b18f97680e4811ef9180e39b90c1cbdb', 'b18f97690e4811ef90b2e39b90c1cbdb', 'b8cb56780e4811efa2f9e39b90c1cbdb', 'b8cb56790e4811efa57fe39b90c1cbdb', 'b8cb567a0e4811efa4a1e39b90c1cbdb', 'b8cb567b0e4811efa31be39b90c1cbdb', 'efd3646f0e4811efba07e39b90c1cbdb']]]></components_ids>
+                <canvas_bg_color>#ffffff</canvas_bg_color>
+                <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts of the components owned by this widget.
+# This code is always executed prior simulation start.
+# HIL API is imported as 'hil'
+]]></initialization_code>
+                <widget_settings>
+                    <x>2896</x>
+                    <y>832</y>
+                    <width>376</width>
+                    <height>328</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <collapsed>False</collapsed>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[GRID INTERFACE]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                
+                <linked_model_components_settings>
+                    </linked_model_components_settings>
+            </component_data>
+        <component_data>
+                <id>b18f97660e4811efaaf5e39b90c1cbdb</id>
+                <name><![CDATA[ F Nadir]]></name>
+                <type>TextBoxMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.set_scada_input_value('Grid.F_NADIR', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[60.0]]></inputValue>
+                <inputValueType>float</inputValueType>
+                <unit><![CDATA[]]></unit>
+                <widget_settings>
+                    <x>48</x>
+                    <y>208</y>
+                    <width>124</width>
+                    <height>32</height>
+                    <inputWidgetWidth>40</inputWidgetWidth>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position>2</hierarchy_position>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>b18f97670e4811ef9dbfe39b90c1cbdb</id>
+                <name><![CDATA[ ROCOF]]></name>
+                <type>TextBoxMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.set_scada_input_value('Grid.ROCOF', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[1.0]]></inputValue>
+                <inputValueType>float</inputValueType>
+                <unit><![CDATA[]]></unit>
+                <widget_settings>
+                    <x>192</x>
+                    <y>208</y>
+                    <width>128</width>
+                    <height>32</height>
+                    <inputWidgetWidth>60</inputWidgetWidth>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position>2</hierarchy_position>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>b18f97680e4811ef9180e39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_Pref]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('Grid.freq', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('Grid.freq')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[60.0]]></inputValue>
+                <min>55.0</min>
+                <max>65.0</max>
+                <step>0.5</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>152</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Grid Frequency (Hz)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>b18f97690e4811ef90b2e39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_Pref1]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('Grid.Vrms', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('Grid.Vrms')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[220.0]]></inputValue>
+                <min>200.0</min>
+                <max>240.0</max>
+                <step>1.0</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>104</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Grid Voltage (Vrms)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>b8cb56780e4811efa2f9e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_PF]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[MGCC.Meter.POWER_P]]></signal_name>
+                <unit><![CDATA[kW]]></unit>
+                <automatic_unit>False</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>0.001</scaling_factor>
+                <widget_settings>
+                    <x>184</x>
+                    <y>8</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>b8cb56790e4811efa57fe39b90c1cbdb</id>
+                <name><![CDATA[VSC1_Meter_I_RMS]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[MGCC.Meter.Freq]]></signal_name>
+                <unit><![CDATA[Hz]]></unit>
+                <automatic_unit>True</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>1.0</scaling_factor>
+                <widget_settings>
+                    <x>8</x>
+                    <y>56</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>b8cb567a0e4811efa4a1e39b90c1cbdb</id>
+                <name><![CDATA[VSC1_Meter_V_RMS]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[MGCC.Meter.V_RMS]]></signal_name>
+                <unit><![CDATA[V]]></unit>
+                <automatic_unit>True</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>1.0</scaling_factor>
+                <widget_settings>
+                    <x>8</x>
+                    <y>8</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>b8cb567b0e4811efa31be39b90c1cbdb</id>
+                <name><![CDATA[VSC1_QF]]></name>
+                <type>DigitalDisplay</type>
+                <description><![CDATA[]]></description>
+                <data_type>Analog signal</data_type>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# mandatory variable used for storing value that will be displayed
+displayValue = 0.0
+
+]]></code>
+                <signal_name><![CDATA[MGCC.Meter.POWER_Q]]></signal_name>
+                <unit><![CDATA[kVAr]]></unit>
+                <automatic_unit>False</automatic_unit>
+                <decimals><![CDATA[2]]></decimals>
+                <updateRate>500</updateRate>
+                <scaling_factor>0.001</scaling_factor>
+                <widget_settings>
+                    <x>184</x>
+                    <y>56</y>
+                    <width>168</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                <advance_widget_settings>
+                    <color_range>False</color_range>
+                    <green_range>(0, 0, 0, 0)</green_range>
+                    <orange_range>(0, 0, 0, 0)</orange_range>
+                    <red_range>(0, 0, 0, 0)</red_range>
+                </advance_widget_settings>
+            </component_data>
+        <component_data>
+                <id>efd3646f0e4811efba07e39b90c1cbdb</id>
+                <name><![CDATA[ Frequency deep]]></name>
+                <type>CheckBoxMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# NOTE: entered value is available through variable 'inputValue'
+
+if inputValue:
+    # do something when checkbox is checked
+    hil.set_scada_input_value('Grid.Flag', 1.0)
+else:
+    # do something when checkbox is unchecked
+    hil.set_scada_input_value('Grid.Flag', 0.0)
+   
+
+]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it, widget value won't be changed.
+widgetValue = None
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[True]]></inputValue>
+                <widget_settings>
+                    <x>56</x>
+                    <y>248</y>
+                    <width>248</width>
+                    <height>32</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[]]></label>
+                    <use_label>False</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>82b31c970e6011efbc5ce39b90c1cbdb</id>
+                <name><![CDATA[VSC5]]></name>
+                <type>Group</type>
+                <description><![CDATA[]]></description>
+                <components_ids><![CDATA[['94ee4c010e6011ef8b78e39b90c1cbdb', '94ee4c020e6011efbc67e39b90c1cbdb', '94ee75080e6011efb697e39b90c1cbdb', '94ee75090e6011ef8f75e39b90c1cbdb', '94ee750a0e6011ef96d6e39b90c1cbdb']]]></components_ids>
+                <canvas_bg_color>#ffffff</canvas_bg_color>
+                <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts of the components owned by this widget.
+# This code is always executed prior simulation start.
+# HIL API is imported as 'hil'
+]]></initialization_code>
+                <widget_settings>
+                    <x>2592</x>
+                    <y>328</y>
+                    <width>376</width>
+                    <height>264</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <collapsed>False</collapsed>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[MICROGRID CENTRAL CONTROLLER INTERFACE]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                
+                <linked_model_components_settings>
+                    </linked_model_components_settings>
+            </component_data>
+        <component_data>
+                <id>94ee4c010e6011ef8b78e39b90c1cbdb</id>
+                <name><![CDATA[Button6]]></name>
+                <type>MacroButton</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+hil.set_scada_input_value('MGCC.STS', 0)
+hil.wait_msec(10.0)]]></on_use_code>
+                <on_start_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+hil.set_scada_input_value('mgcc_req2tieSR', 0)]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+]]></on_stop_code>
+                <on_start_code_source><![CDATA[Custom code]]></on_start_code_source>
+                <widget_settings>
+                    <x>184</x>
+                    <y>8</y>
+                    <width>120</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Island]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>94ee4c020e6011efbc67e39b90c1cbdb</id>
+                <name><![CDATA[Button5]]></name>
+                <type>MacroButton</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+hil.set_scada_input_value('MGCC.STS', 1)
+hil.wait_msec(10.0)]]></on_use_code>
+                <on_start_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+hil.set_scada_input_value('mgcc_req2tieSR', 0)]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+]]></on_stop_code>
+                <on_start_code_source><![CDATA[Custom code]]></on_start_code_source>
+                <widget_settings>
+                    <x>40</x>
+                    <y>8</y>
+                    <width>128</width>
+                    <height>40</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Tie to grid]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>94ee75080e6011efb697e39b90c1cbdb</id>
+                <name><![CDATA[MGCC_Pref]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('MGCC.Pref', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('MGCC.Pref')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.0]]></inputValue>
+                <min>-1.0</min>
+                <max>1.0</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>120</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Active Power to Export / Import (pu)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>94ee75090e6011ef8f75e39b90c1cbdb</id>
+                <name><![CDATA[MGCC_Qref]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('MGCC.Qref', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('MGCC.Qref')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.0]]></inputValue>
+                <min>-1.0</min>
+                <max>1.0</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>40</x>
+                    <y>168</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Reactive Power to Export / Import (pu)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>94ee750a0e6011ef96d6e39b90c1cbdb</id>
+                <name><![CDATA[Load_Single-phase Variable Load_Enable_fb]]></name>
+                <type>TextDisplay</type>
+                <description><![CDATA[]]></description>
+                <code><![CDATA[# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+load_enable_fb = hil.model_read('MGCC.S1_fb');
+
+if(load_enable_fb == 1):
+    str2display = 'Tied';
+else:
+    str2display = 'Islanded';
+
+# specify Text Display options ('text' part is mandatory)
+textDisplayData = {
+    # label text
+    "text": str2display,
+    # text color: 'red', 'green', 'blue', 'orange', 'black'
+    "text_color": 'black',
+}
+
+# mandatory variable used for storing value that will be displayed
+displayValue = textDisplayData
+]]></code>
+                <updateRate>500</updateRate>
+                <widget_settings>
+                    <x>80</x>
+                    <y>56</y>
+                    <width>200</width>
+                    <height>56</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Microgrid Status]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>d2a8e2011c6411efb60ce39b90c1cbdb</id>
+                <name><![CDATA[VSC6]]></name>
+                <type>Group</type>
+                <description><![CDATA[]]></description>
+                <components_ids><![CDATA[['43609b9e1c6511ef808ce39b90c1cbdb', '4360c2a51c6511ef8ebee39b90c1cbdb', '4360c2a61c6511efbface39b90c1cbdb', '4360c2a71c6511efb6ffe39b90c1cbdb', '4360c2a81c6511ef8362e39b90c1cbdb']]]></components_ids>
+                <canvas_bg_color>#ffffff</canvas_bg_color>
+                <initialization_code><![CDATA[# NOTE: Variables and functions defined here will be
+# available for use in all Macro and Expression scripts of the components owned by this widget.
+# This code is always executed prior simulation start.
+# HIL API is imported as 'hil'
+]]></initialization_code>
+                <widget_settings>
+                    <x>1232</x>
+                    <y>656</y>
+                    <width>376</width>
+                    <height>320</height>
+                    <appearance><![CDATA[Raised]]></appearance>
+                    <collapsed>False</collapsed>
+                    <hierarchy_position>1</hierarchy_position>
+                    <label><![CDATA[PARÂMETROS DE CONTROLE]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+                
+                <linked_model_components_settings>
+                    </linked_model_components_settings>
+            </component_data>
+        <component_data>
+                <id>43609b9e1c6511ef808ce39b90c1cbdb</id>
+                <name><![CDATA[VSC2_KI]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('VSC1.KI', inputValue)
+hil.model_write('VSC2.KI', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('VSC2.KI')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[1.0]]></inputValue>
+                <min>0.0</min>
+                <max>100.0</max>
+                <step>1.0</step>
+                <widget_settings>
+                    <x>32</x>
+                    <y>224</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Ki (Ganho Integral do Droop Aprimorado)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>4360c2a51c6511ef8ebee39b90c1cbdb</id>
+                <name><![CDATA[VSC2_FC]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('VSC1.FC', inputValue)
+hil.model_write('VSC2.FC', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('VSC2.FC')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[450.0]]></inputValue>
+                <min>120.0</min>
+                <max>1000.0</max>
+                <step>1.0</step>
+                <widget_settings>
+                    <x>32</x>
+                    <y>56</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Frequência de Corte do LPF (Hz)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>4360c2a61c6511efbface39b90c1cbdb</id>
+                <name><![CDATA[VSC2_VZ]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('VSC1.VZ', inputValue)
+hil.model_write('VSC2.VZ', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('VSC2.VZ')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[1.25]]></inputValue>
+                <min>0.0</min>
+                <max>3.0</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>32</x>
+                    <y>8</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Indutância Virtual (mH)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>4360c2a71c6511efb6ffe39b90c1cbdb</id>
+                <name><![CDATA[Kv (Ganho do Droop Aprimorado)]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('VSC1.KV', inputValue)
+hil.model_write('VSC2.KV', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('VSC1.KV')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.01]]></inputValue>
+                <min>-50.0</min>
+                <max>50.0</max>
+                <step>0.1</step>
+                <widget_settings>
+                    <x>32</x>
+                    <y>112</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Kv (Ganho do Droop Aprimorado)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        <component_data>
+                <id>4360c2a81c6511ef8362e39b90c1cbdb</id>
+                <name><![CDATA[VSC2_KP]]></name>
+                <type>SliderMacro</type>
+                <description><![CDATA[]]></description>
+                <on_use_code active="True"><![CDATA[# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+# NOTE: entered value is available through variable 'inputValue'
+
+hil.model_write('VSC1.KP', inputValue)
+hil.model_write('VSC2.KP', inputValue)]]></on_use_code>
+                <on_start_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed on simulation start.
+# NOTE: Variables specified here will be available in other handlers.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_start_code>
+                <on_stop_code active="False"><![CDATA[# NOTE: The code specified in this handler will be executed after simulation is stopped.
+# HIL API is imported as 'hil'
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change widget value by setting this variable.
+# NOTE: If you not specify 'widgetValue' variable or assign 'None' to it,
+# widget value won't be changed.
+widgetValue = None
+]]></on_stop_code>
+                <on_timer_code active="True"><![CDATA[# NOTE: The code specified in this handler will be executed periodically each 1000ms.
+# HIL API is imported as 'hil'
+# NOTE: Only read functions are available from the HIL API
+# SCADA API is imported as 'panel'
+# SCADA API constants are imported as 'api_const'
+# 'WIDGET_HANDLE' constant holds the WidgetHandle object of this widget.
+# This object can be used as an argument in SCADA API functions.
+
+# Change the widget value by setting this variable.
+# NOTE: If you do not specify a 'widgetValue' variable or assign 'None' to it,
+# the widget value will not be changed.
+widgetValue = hil.model_read('VSC2.KP')
+]]></on_timer_code>
+                <on_start_code_source><![CDATA[Macro code]]></on_start_code_source>
+                <inputValue><![CDATA[0.0]]></inputValue>
+                <min>0.0</min>
+                <max>0.1</max>
+                <step>0.01</step>
+                <widget_settings>
+                    <x>32</x>
+                    <y>168</y>
+                    <width>288</width>
+                    <height>48</height>
+                    <appearance><![CDATA[Flat]]></appearance>
+                    <hierarchy_position><![CDATA[2]]></hierarchy_position>
+                    <is_background><![CDATA[False]]></is_background>
+                    <label><![CDATA[Kp (Ganho Proporcional do Droop Aprimorado)]]></label>
+                    <use_label>True</use_label>
+                </widget_settings>
+            </component_data>
+        </components>
+</ui_settings>

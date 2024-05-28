@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "typhoon\tools\compiler\main.py", line 384, in execute
+  File "typhoon\tools\compiler\pe_compiler\main.py", line 183, in compile_model
+  File "typhoon\tools\compiler\pe_compiler\main.py", line 371, in compile_dev_partition
+  File "typhoon\tools\compiler\pe_compiler\pe_compiler_entities.py", line 2181, in matrix_scheduler
+  File "typhoon\tools\compiler\pe_compiler\functions\matrix_scheduler.py", line 531, in matrix_scheduler
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 64.0 MiB for an array with shape (16777216,) and data type int32

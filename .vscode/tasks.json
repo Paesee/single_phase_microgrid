@@ -160,9 +160,9 @@
       "args": [
         "-w",
         "-c",
-        "${workspaceFolder}/src/droop.c",
+        "${workspaceFolder}/src/improved_droop.c",
         "-o",
-        "${workspaceFolder}/output/VHIL/droop.o"
+        "${workspaceFolder}/output/VHIL/improved_droop.o"
       ],
       "group": "build",
       "presentation": {
@@ -331,8 +331,8 @@
       "args": [
         "-shared",
         "-o",
-        "${workspaceFolder}/output/VHIL/lib_droop.dll",
-        "${workspaceFolder}/output/VHIL/droop.o"
+        "${workspaceFolder}/output/VHIL/lib_improved_droop.dll",
+        "${workspaceFolder}/output/VHIL/improved_droop.o"
       ],
       "group": "build",
       "presentation": {

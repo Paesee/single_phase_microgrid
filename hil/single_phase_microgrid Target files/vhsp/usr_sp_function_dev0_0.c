@@ -31,51 +31,51 @@ extern "C" {
 }
 #endif
 
+
+#include "sogi_qsg.h"
+
 #include "all_pass_filter.h"
-#include "droop.h"
+
+
+#include "improved_droop.h"
+
+#include "all_pass_filter.h"
+
+
+
 #include "resonant_control.h"
+
+#include "improved_droop.h"
+
+
+#include "resonant_control.h"
+
+#include "resonant_control.h"
+#include "rms.h"
+#include "improved_droop.h"
 #include "sogi_qsg.h"
 #include "virtual_impedance.h"
 #include "mrac.h"
+#include "all_pass_filter.h"
 #include "power_control.h"
-#include "rms.h"
 
 #include "virtual_impedance.h"
 
+#include "sogi_qsg.h"
+
 
 
 #include "resonant_control.h"
-
-#include "all_pass_filter.h"
-#include "droop.h"
-#include "resonant_control.h"
+#include "rms.h"
+#include "improved_droop.h"
 #include "sogi_qsg.h"
 #include "virtual_impedance.h"
 #include "mrac.h"
+#include "all_pass_filter.h"
 #include "power_control.h"
-#include "rms.h"
 
 #include "virtual_impedance.h"
 
-
-#include "droop.h"
-
-
-#include "droop.h"
-
-#include "all_pass_filter.h"
-
-
-#include "all_pass_filter.h"
-
-#include "sogi_qsg.h"
-
-
-
-
-#include "resonant_control.h"
-
-#include "sogi_qsg.h"
 
 // ----------------------------------------------------------------------------------------                // generated using template:generic_macros.template-----------------------------------------
 /*********************** Macros (Inline Functions) Definitions ***************************/
@@ -112,32 +112,6 @@ typedef double real;
 
 //@cmp.def.start
 //component defines
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -410,10 +384,6 @@ float  _mgcc_meter_meter__Qint , _mgcc_meter_meter__Qt;
 
 
 
-
-
-
-
 float  _vsc1_meter_meter__Ts;
 unsigned int   _vsc1_meter_meter__flag_init;
 float  _vsc1_meter_meter__Ts2 , _vsc1_meter_meter__ws , _vsc1_meter_meter__ws_n1 , _vsc1_meter_meter__Va , _vsc1_meter_meter__Va_n1 , _vsc1_meter_meter__Va_n2 , _vsc1_meter_meter__Vb , _vsc1_meter_meter__Vb_n1 , _vsc1_meter_meter__Vb_n2;
@@ -466,74 +436,12 @@ float  _vsc1_sogi_qsg__i_freq = 60;
 
 
 
-const float   _vsc1_droop_controller1__V0 = 220;
-const float   _vsc1_droop_controller1__W0 = 376.9911;
-const float   _vsc1_droop_controller1__DELTA_V = 22;
-const float   _vsc1_droop_controller1__DELTA_W = 18.8495559215;
-const float   _vsc1_droop_controller1__TWOPI = 6.2831;
-struct _vsc1_droop_controller1__Droop {
-    float  p_max ;
-
-    float  q_max ;
-
-    float  p_ref ;
-
-    float  q_ref ;
-
-    float  v0 ;
-
-    float  w0 ;
-
-    float  m ;
-
-    float  n ;
-
-    float  delta_v ;
-
-    float  delta_w ;
-
-    float  p_kminus1 ;
-
-    float  p_kminus2 ;
-
-    float  pf_kminus1 ;
-
-    float  pf_kminus2 ;
-
-    float  q_kminus1 ;
-
-    float  q_kminus2 ;
-
-    float  qf_kminus1 ;
-
-    float  qf_kminus2 ;
-}  ;
-struct _vsc1_droop_controller1__Droop  _vsc1_droop_controller1__droop;
-float  _vsc1_droop_controller1__p = 0;
-float  _vsc1_droop_controller1__q = 0;
-float  _vsc1_droop_controller1__p_ref = 0;
-float  _vsc1_droop_controller1__q_ref = 0;
-float  _vsc1_droop_controller1__v_ref = 0;
-float  _vsc1_droop_controller1__w_ref = 0;
-float  _vsc1_droop_controller1__ONE_BY_SQRT2 = 0;
-float  _vsc1_droop_controller1__TS_02KHZ = 0;
-float  _vsc1_droop_controller1__mod_V_alphaBeta = 0;
-float  _vsc1_droop_controller1__v_line = 0;
-float  _vsc1_droop_controller1__v0 = 0;
-float  _vsc1_droop_controller1__w0 = 0;
-float  _vsc1_droop_controller1__pcc = 0;
-
-
 float  _vsc1_current_controller__err = 0;
 float  _vsc1_current_controller__u = 0;
 float  _vsc1_current_controller__u0 = 0;
 float  _vsc1_current_controller__u_bounded = 0;
 float  _vsc1_current_controller__KP = 0;
 float  _vsc1_current_controller__U_BOUNDARY = 0;
-
-
-
-
 
 
 
@@ -591,64 +499,6 @@ float  _vsc2_sogi_qsg__i_alpha = 0;
 float  _vsc2_sogi_qsg__i_beta = 0;
 float  _vsc2_sogi_qsg__i_freq = 60;
 
-
-
-const float   _vsc2_droop_controller1__V0 = 220;
-const float   _vsc2_droop_controller1__W0 = 376.9911;
-const float   _vsc2_droop_controller1__DELTA_V = 22;
-const float   _vsc2_droop_controller1__DELTA_W = 18.8495559215;
-const float   _vsc2_droop_controller1__TWOPI = 6.2831;
-struct _vsc2_droop_controller1__Droop {
-    float  p_max ;
-
-    float  q_max ;
-
-    float  p_ref ;
-
-    float  q_ref ;
-
-    float  v0 ;
-
-    float  w0 ;
-
-    float  m ;
-
-    float  n ;
-
-    float  delta_v ;
-
-    float  delta_w ;
-
-    float  p_kminus1 ;
-
-    float  p_kminus2 ;
-
-    float  pf_kminus1 ;
-
-    float  pf_kminus2 ;
-
-    float  q_kminus1 ;
-
-    float  q_kminus2 ;
-
-    float  qf_kminus1 ;
-
-    float  qf_kminus2 ;
-}  ;
-struct _vsc2_droop_controller1__Droop  _vsc2_droop_controller1__droop;
-float  _vsc2_droop_controller1__p = 0;
-float  _vsc2_droop_controller1__q = 0;
-float  _vsc2_droop_controller1__p_ref = 0;
-float  _vsc2_droop_controller1__q_ref = 0;
-float  _vsc2_droop_controller1__v_ref = 0;
-float  _vsc2_droop_controller1__w_ref = 0;
-float  _vsc2_droop_controller1__ONE_BY_SQRT2 = 0;
-float  _vsc2_droop_controller1__TS_02KHZ = 0;
-float  _vsc2_droop_controller1__mod_V_alphaBeta = 0;
-float  _vsc2_droop_controller1__v_line = 0;
-float  _vsc2_droop_controller1__v0 = 0;
-float  _vsc2_droop_controller1__w0 = 0;
-float  _vsc2_droop_controller1__pcc = 0;
 
 
 float  _vsc2_current_controller__err = 0;
@@ -742,9 +592,72 @@ float  _vsc2_current_controller__U_BOUNDARY = 0;
 
 
 
+const float   _vsc1_droop_controller2__VZERO = 220;
+const float   _vsc1_droop_controller2__WZERO = 376.9911;
+const float   _vsc1_droop_controller2__DELTA_V = 22;
+const float   _vsc1_droop_controller2__DELTA_W = 18.8495559215;
+const float   _vsc1_droop_controller2__TWOPI = 6.2831;
+const float   _vsc1_droop_controller2__TS_10KHZ = 0.0001;
+const float   _vsc1_droop_controller2__WC = 75.3982236862;
+const int   _vsc1_droop_controller2__ISLANDED = 1;
+const int   _vsc1_droop_controller2__TIED = 0;
+struct _vsc1_droop_controller2__ImprovedDroop {
+    float  sampling_time ;
 
+    float  cutoff_frequency ;
 
+    float  phi1 ;
 
+    float  phi2 ;
+
+    float  phi3 ;
+
+    float  p_kminus1 ;
+
+    float  pf_kminus1 ;
+
+    float  q_kminus1 ;
+
+    float  qf_kminus1 ;
+
+    float  p_max ;
+
+    float  q_max ;
+
+    float  p0 ;
+
+    float  q0 ;
+
+    float  v0 ;
+
+    float  w0 ;
+
+    float  m ;
+
+    float  n ;
+
+    float  ki ;
+
+    float  kv ;
+
+    int  is_islanded ;
+
+    float  phi_integral ;
+
+    float  vin_kminus1 ;
+
+    float  vout_kminus1 ;
+
+    float  w_kminus1 ;
+
+    float  theta_kminus1 ;
+}  ;
+struct _vsc1_droop_controller2__ImprovedDroop  _vsc1_droop_controller2__droop;
+float  _vsc1_droop_controller2__v = 0;
+float  _vsc1_droop_controller2__p = 0;
+float  _vsc1_droop_controller2__q = 0;
+float  _vsc1_droop_controller2__p_ref = 0;
+float  _vsc1_droop_controller2__q_ref = 0;
 
 struct _vsc1_apf__AllPassFilter {
     float  sampling_time ;
@@ -793,13 +706,72 @@ float  _vsc1_apf__output = 0;
 
 
 
+const float   _vsc2_droop_controller2__VZERO = 220;
+const float   _vsc2_droop_controller2__WZERO = 376.9911;
+const float   _vsc2_droop_controller2__DELTA_V = 22;
+const float   _vsc2_droop_controller2__DELTA_W = 18.8495559215;
+const float   _vsc2_droop_controller2__TWOPI = 6.2831;
+const float   _vsc2_droop_controller2__TS_10KHZ = 0.0001;
+const float   _vsc2_droop_controller2__WC = 75.3982236862;
+const int   _vsc2_droop_controller2__ISLANDED = 1;
+const int   _vsc2_droop_controller2__TIED = 0;
+struct _vsc2_droop_controller2__ImprovedDroop {
+    float  sampling_time ;
 
+    float  cutoff_frequency ;
 
+    float  phi1 ;
 
+    float  phi2 ;
 
+    float  phi3 ;
 
+    float  p_kminus1 ;
 
+    float  pf_kminus1 ;
 
+    float  q_kminus1 ;
+
+    float  qf_kminus1 ;
+
+    float  p_max ;
+
+    float  q_max ;
+
+    float  p0 ;
+
+    float  q0 ;
+
+    float  v0 ;
+
+    float  w0 ;
+
+    float  m ;
+
+    float  n ;
+
+    float  ki ;
+
+    float  kv ;
+
+    int  is_islanded ;
+
+    float  phi_integral ;
+
+    float  vin_kminus1 ;
+
+    float  vout_kminus1 ;
+
+    float  w_kminus1 ;
+
+    float  theta_kminus1 ;
+}  ;
+struct _vsc2_droop_controller2__ImprovedDroop  _vsc2_droop_controller2__droop;
+float  _vsc2_droop_controller2__v = 0;
+float  _vsc2_droop_controller2__p = 0;
+float  _vsc2_droop_controller2__q = 0;
+float  _vsc2_droop_controller2__p_ref = 0;
+float  _vsc2_droop_controller2__q_ref = 0;
 
 struct _vsc2_apf__AllPassFilter {
     float  sampling_time ;
@@ -838,13 +810,12 @@ float  _vsc2_apf__output = 0;
 
 
 
-
-
-
-
 #define _grid_vsp_sin1_tdf_sg_ctrl_sine1__no_of_points 1000
 #define _grid_vsp_sin1_tdf_sg_ctrl_sine1__max_int40 (1099511627775)
 #define _grid_vsp_sin1_tdf_sg_ctrl_sine1__max_int32 (4294967295)
+
+
+
 
 
 
@@ -902,6 +873,9 @@ const float   _vsc1_virtual_impedance__ZETA = 1.0;
 const float   _vsc1_virtual_impedance__POLE = 1.570796326794897e4;
 struct _vsc1_virtual_impedance__VirtualImpedance  _vsc1_virtual_impedance__vz;
 float  _vsc1_virtual_impedance__output = 0;
+
+
+
 
 
 
@@ -999,7 +973,6 @@ struct _vsc1_voltage_controller__ResonantController {
 float  _vsc1_voltage_controller__u_bounded = 0;
 float  _vsc1_voltage_controller__u = 0;
 float  _vsc1_voltage_controller__ref0 = 0;
-float  _vsc1_voltage_controller__theta0 = 0;
 struct _vsc1_voltage_controller__ResonantController  _vsc1_voltage_controller__rc0;
 float  _vsc1_voltage_controller__u0 = 0;
 float  _vsc1_voltage_controller__err0 = 0;
@@ -1052,7 +1025,6 @@ struct _vsc2_voltage_controller__ResonantController {
 float  _vsc2_voltage_controller__u_bounded = 0;
 float  _vsc2_voltage_controller__u = 0;
 float  _vsc2_voltage_controller__ref0 = 0;
-float  _vsc2_voltage_controller__theta0 = 0;
 struct _vsc2_voltage_controller__ResonantController  _vsc2_voltage_controller__rc0;
 float  _vsc2_voltage_controller__u0 = 0;
 float  _vsc2_voltage_controller__err0 = 0;
@@ -1067,8 +1039,6 @@ float  _vsc2_voltage_controller__omega0 = 0;
 float  _vsc2_voltage_controller__TS_10KHZ = 0;
 float  _vsc2_voltage_controller__SQRT2 = 0;
 float  _vsc2_voltage_controller__U_BOUNDARY = 0;
-
-
 
 
 
@@ -1312,75 +1282,49 @@ double _mgcc_i_ia1__out;
 double _vsc1_constant13__out = 1.0;
 double _vsc1_constant14__out = 1.0;
 double _vsc1_constant15__out = 1.0;
-double _vsc1_constant18__out = 1.0;
+double _vsc1_constant19__out = 1.0;
 double _vsc1_constant9__out = 15000.0;
 double _vsc1_fc__out;
 double _vsc1_il1_ia1__out;
 double _vsc1_il2_ia1__out;
 double _vsc1_ki__out;
-double _vsc1_kp__out;
 double _vsc1_kv__out;
 double _vsc1_meter_grid_frequency__out = 60.0;
 double _vsc1_meter__ig_ia2__out;
 double _vsc1_meter__vg_va2__out;
 X_UnInt32 _vsc1_meter_ncycles__out = 1;
-double _vsc1_rt18_output__out;
 double _vsc1_rt19_output__out;
-double _vsc1_rt24_output__out;
 double _vsc1_rt30_output__out;
 double _vsc1_rt42_output__out;
 double _vsc1_rt43_output__out;
 double _vsc1_rt61_output__out;
-double _vsc1_rt62_output__out;
-double _vsc1_rt63_output__out;
-double _vsc1_rt64_output__out;
-double _vsc1_rt65_output__out;
-double _vsc1_rt66_output__out;
-double _vsc1_rt67_output__out;
-double _vsc1_rt68_output__out;
-double _vsc1_rt69_output__out;
-double _vsc1_rt70_output__out;
-double _vsc1_rt71_output__out;
-double _vsc1_rt72_output__out;
-double _vsc1_rt73_output__out;
-double _vsc1_v0__out;
+double _vsc1_rt80_output__out;
+double _vsc1_rt81_output__out;
+double _vsc1_rt83_output__out;
 double _vsc1_vc_va1__out;
 double _vsc1_vz__out;
 double _vsc2_constant13__out = 1.0;
 double _vsc2_constant14__out = 1.0;
 double _vsc2_constant15__out = 1.0;
-double _vsc2_constant18__out = 1.0;
+double _vsc2_constant19__out = 1.0;
 double _vsc2_constant9__out = 15000.0;
 double _vsc2_fc__out;
 double _vsc2_il1_ia1__out;
 double _vsc2_il2_ia1__out;
 double _vsc2_ki__out;
-double _vsc2_kp__out;
 double _vsc2_kv__out;
 double _vsc2_meter_grid_frequency__out = 60.0;
 double _vsc2_meter__ig_ia2__out;
 double _vsc2_meter__vg_va2__out;
 X_UnInt32 _vsc2_meter_ncycles__out = 1;
-double _vsc2_rt18_output__out;
 double _vsc2_rt19_output__out;
-double _vsc2_rt24_output__out;
 double _vsc2_rt30_output__out;
 double _vsc2_rt42_output__out;
 double _vsc2_rt43_output__out;
 double _vsc2_rt61_output__out;
-double _vsc2_rt62_output__out;
-double _vsc2_rt63_output__out;
-double _vsc2_rt64_output__out;
-double _vsc2_rt65_output__out;
-double _vsc2_rt66_output__out;
-double _vsc2_rt67_output__out;
-double _vsc2_rt68_output__out;
-double _vsc2_rt69_output__out;
-double _vsc2_rt70_output__out;
-double _vsc2_rt71_output__out;
-double _vsc2_rt72_output__out;
-double _vsc2_rt73_output__out;
-double _vsc2_v0__out;
+double _vsc2_rt80_output__out;
+double _vsc2_rt81_output__out;
+double _vsc2_rt83_output__out;
 double _vsc2_vc_va1__out;
 double _vsc2_vz__out;
 double _grid_vsp_sin1_limit1__out;
@@ -1520,23 +1464,6 @@ double _vsc1_lpf_internal_filter__fc;
 double _vsc1_lpf_internal_filter__u;
 
 double _vsc1_lpf_internal_filter__y;
-double _vsc1_droop_controller1__IN_ENABLE;
-double _vsc1_droop_controller1__IN_I_DIR;
-double _vsc1_droop_controller1__IN_I_QUAD;
-double _vsc1_droop_controller1__IN_KI;
-double _vsc1_droop_controller1__IN_KP;
-double _vsc1_droop_controller1__IN_KV;
-double _vsc1_droop_controller1__IN_MICROGRID_STATUS;
-double _vsc1_droop_controller1__IN_P0;
-double _vsc1_droop_controller1__IN_Q0;
-double _vsc1_droop_controller1__IN_V_DIR;
-double _vsc1_droop_controller1__IN_V_PCC;
-double _vsc1_droop_controller1__IN_V_QUAD;
-
-double _vsc1_droop_controller1__OUT_OMEGA_REF;
-double _vsc1_droop_controller1__OUT_V0;
-double _vsc1_droop_controller1__OUT_VRMS;
-double _vsc1_droop_controller1__OUT_V_REF;
 double _vsc1_current_controller__IN_ENABLE;
 double _vsc1_current_controller__IN_IL1;
 double _vsc1_current_controller__IN_MICROGRID_STATUS;
@@ -1570,23 +1497,6 @@ double _vsc2_lpf_internal_filter__fc;
 double _vsc2_lpf_internal_filter__u;
 
 double _vsc2_lpf_internal_filter__y;
-double _vsc2_droop_controller1__IN_ENABLE;
-double _vsc2_droop_controller1__IN_I_DIR;
-double _vsc2_droop_controller1__IN_I_QUAD;
-double _vsc2_droop_controller1__IN_KI;
-double _vsc2_droop_controller1__IN_KP;
-double _vsc2_droop_controller1__IN_KV;
-double _vsc2_droop_controller1__IN_MICROGRID_STATUS;
-double _vsc2_droop_controller1__IN_P0;
-double _vsc2_droop_controller1__IN_Q0;
-double _vsc2_droop_controller1__IN_V_DIR;
-double _vsc2_droop_controller1__IN_V_PCC;
-double _vsc2_droop_controller1__IN_V_QUAD;
-
-double _vsc2_droop_controller1__OUT_OMEGA_REF;
-double _vsc2_droop_controller1__OUT_V0;
-double _vsc2_droop_controller1__OUT_VRMS;
-double _vsc2_droop_controller1__OUT_V_REF;
 double _vsc2_current_controller__IN_ENABLE;
 double _vsc2_current_controller__IN_IL1;
 double _vsc2_current_controller__IN_MICROGRID_STATUS;
@@ -1646,6 +1556,20 @@ double _mgcc_single_phase_pll1_math_f2__out;
 double _mgcc_bus_join1__out[4];
 double _mgcc_single_phase_pll1_gain2__out;
 double _vsc1_meter_out_bus__out[11];
+double _vsc1_droop_controller2__IN_ENABLE;
+double _vsc1_droop_controller2__IN_I_DIR;
+double _vsc1_droop_controller2__IN_I_QUAD;
+double _vsc1_droop_controller2__IN_KI;
+double _vsc1_droop_controller2__IN_KV;
+double _vsc1_droop_controller2__IN_MICROGRID_STATUS;
+double _vsc1_droop_controller2__IN_P0;
+double _vsc1_droop_controller2__IN_Q0;
+double _vsc1_droop_controller2__IN_V_DIR;
+double _vsc1_droop_controller2__IN_V_QUAD;
+
+double _vsc1_droop_controller2__OUT_PF;
+double _vsc1_droop_controller2__OUT_QF;
+double _vsc1_droop_controller2__OUT_V;
 double _vsc1_apf__IN_IL2_F;
 
 double _vsc1_apf__OUT_IL2_PC;
@@ -1655,6 +1579,20 @@ double _vsc1_grid_forming_pwm_modulator__limited_in[2];
 X_UnInt32 _vsc1_grid_forming_pwm_modulator__update_mask;
 
 double _vsc2_meter_out_bus__out[11];
+double _vsc2_droop_controller2__IN_ENABLE;
+double _vsc2_droop_controller2__IN_I_DIR;
+double _vsc2_droop_controller2__IN_I_QUAD;
+double _vsc2_droop_controller2__IN_KI;
+double _vsc2_droop_controller2__IN_KV;
+double _vsc2_droop_controller2__IN_MICROGRID_STATUS;
+double _vsc2_droop_controller2__IN_P0;
+double _vsc2_droop_controller2__IN_Q0;
+double _vsc2_droop_controller2__IN_V_DIR;
+double _vsc2_droop_controller2__IN_V_QUAD;
+
+double _vsc2_droop_controller2__OUT_PF;
+double _vsc2_droop_controller2__OUT_QF;
+double _vsc2_droop_controller2__OUT_V;
 double _vsc2_apf__IN_IL2_F;
 
 double _vsc2_apf__OUT_IL2_PC;
@@ -1751,23 +1689,19 @@ double _vsc2_product1__out;
 double _vsc2_product2__out;
 double _mgcc_single_phase_pll1_product1__out;
 double _vsc1_voltage_controller__IN_ENABLE;
-double _vsc1_voltage_controller__IN_OMEGA_REF;
 double _vsc1_voltage_controller__IN_VC;
 double _vsc1_voltage_controller__IN_VL_DROP;
 double _vsc1_voltage_controller__IN_V_REF;
 
-double _vsc1_voltage_controller__OUT_VL_DROP;
 double _vsc1_voltage_controller__OUT_V_CTRL;
-double _vsc1_voltage_controller__OUT_V_REF_CTRL;
+double _vsc1_voltage_controller__OUT_V_REF;
 double _vsc2_voltage_controller__IN_ENABLE;
-double _vsc2_voltage_controller__IN_OMEGA_REF;
 double _vsc2_voltage_controller__IN_VC;
 double _vsc2_voltage_controller__IN_VL_DROP;
 double _vsc2_voltage_controller__IN_V_REF;
 
-double _vsc2_voltage_controller__OUT_VL_DROP;
 double _vsc2_voltage_controller__OUT_V_CTRL;
-double _vsc2_voltage_controller__OUT_V_REF_CTRL;
+double _vsc2_voltage_controller__OUT_V_REF;
 double _load_single_phase_variable_load_single_phase_core1_grid_synchronization_peak_calc_mathematical_function1__out;
 double _load_single_phase_variable_load_single_phase_core1_single_phase_pll1_limit1__out;
 double _load_single_phase_variable_load_single_phase_core1_sum6__out;
@@ -2017,44 +1951,22 @@ double _mgcc_single_phase_pll1_integrator_with_reset__out_calc;
 double _mgcc_single_phase_pll1_integrator_with_reset__reset_value;
 
 
-double _vsc1_rt18_output__state;
 double _vsc1_rt19_output__state;
-double _vsc1_rt24_output__state;
 double _vsc1_rt30_output__state;
 double _vsc1_rt42_output__state;
 double _vsc1_rt43_output__state;
 double _vsc1_rt61_output__state;
-double _vsc1_rt62_output__state;
-double _vsc1_rt63_output__state;
-double _vsc1_rt64_output__state;
-double _vsc1_rt65_output__state;
-double _vsc1_rt66_output__state;
-double _vsc1_rt67_output__state;
-double _vsc1_rt68_output__state;
-double _vsc1_rt69_output__state;
-double _vsc1_rt70_output__state;
-double _vsc1_rt71_output__state;
-double _vsc1_rt72_output__state;
-double _vsc1_rt73_output__state;
-double _vsc2_rt18_output__state;
+double _vsc1_rt80_output__state;
+double _vsc1_rt81_output__state;
+double _vsc1_rt83_output__state;
 double _vsc2_rt19_output__state;
-double _vsc2_rt24_output__state;
 double _vsc2_rt30_output__state;
 double _vsc2_rt42_output__state;
 double _vsc2_rt43_output__state;
 double _vsc2_rt61_output__state;
-double _vsc2_rt62_output__state;
-double _vsc2_rt63_output__state;
-double _vsc2_rt64_output__state;
-double _vsc2_rt65_output__state;
-double _vsc2_rt66_output__state;
-double _vsc2_rt67_output__state;
-double _vsc2_rt68_output__state;
-double _vsc2_rt69_output__state;
-double _vsc2_rt70_output__state;
-double _vsc2_rt71_output__state;
-double _vsc2_rt72_output__state;
-double _vsc2_rt73_output__state;
+double _vsc2_rt80_output__state;
+double _vsc2_rt81_output__state;
+double _vsc2_rt83_output__state;
 double _grid_c_function2__count;
 
 double _grid_c_function2__Ts;
@@ -2207,7 +2119,6 @@ X_UnInt32 _vsc1_lpf_internal_filter__load_ic;
 
 
 
-
 double _vsc2_lpf_internal_filter__y_old[2];
 
 double _vsc2_lpf_internal_filter__y_old_2[2];
@@ -2236,7 +2147,6 @@ double _vsc2_lpf_internal_filter__b1c[1];
 X_UnInt32 _vsc2_lpf_internal_filter__load_ic;
 
 
-
 double _load_single_phase_variable_load_single_phase_core1_c_function4__n;
 
 double _load_single_phase_variable_load_single_phase_core1_c_function4__old_Qref;
@@ -2245,6 +2155,8 @@ double _load_single_phase_variable_load_single_phase_core1_c_function4__old_Qref
 double _load_single_phase_variable_load_single_phase_core1_c_function5__n;
 
 double _load_single_phase_variable_load_single_phase_core1_c_function5__old_Qref;
+
+
 
 
 
@@ -2524,44 +2436,22 @@ void ReInit_user_sp_cpu0_dev0() {
         _mgcc_single_phase_pll1_integrator_with_reset__out_calc = 0.0 ;
         _mgcc_single_phase_pll1_integrator_with_reset__reset_value = 2 * M_PI ;
     }
-    _vsc1_rt18_output__state =  0.0;
     _vsc1_rt19_output__state =  0.0;
-    _vsc1_rt24_output__state =  0.0;
     _vsc1_rt30_output__state =  0.0;
     _vsc1_rt42_output__state =  0.0;
     _vsc1_rt43_output__state =  0.0;
     _vsc1_rt61_output__state =  0.0;
-    _vsc1_rt62_output__state =  0.0;
-    _vsc1_rt63_output__state =  0.0;
-    _vsc1_rt64_output__state =  0.0;
-    _vsc1_rt65_output__state =  0.0;
-    _vsc1_rt66_output__state =  0.0;
-    _vsc1_rt67_output__state =  0.0;
-    _vsc1_rt68_output__state =  0.0;
-    _vsc1_rt69_output__state =  0.0;
-    _vsc1_rt70_output__state =  0.0;
-    _vsc1_rt71_output__state =  0.0;
-    _vsc1_rt72_output__state =  0.0;
-    _vsc1_rt73_output__state =  0.0;
-    _vsc2_rt18_output__state =  0.0;
+    _vsc1_rt80_output__state =  0.0;
+    _vsc1_rt81_output__state =  0.0;
+    _vsc1_rt83_output__state =  0.0;
     _vsc2_rt19_output__state =  0.0;
-    _vsc2_rt24_output__state =  0.0;
     _vsc2_rt30_output__state =  0.0;
     _vsc2_rt42_output__state =  0.0;
     _vsc2_rt43_output__state =  0.0;
     _vsc2_rt61_output__state =  0.0;
-    _vsc2_rt62_output__state =  0.0;
-    _vsc2_rt63_output__state =  0.0;
-    _vsc2_rt64_output__state =  0.0;
-    _vsc2_rt65_output__state =  0.0;
-    _vsc2_rt66_output__state =  0.0;
-    _vsc2_rt67_output__state =  0.0;
-    _vsc2_rt68_output__state =  0.0;
-    _vsc2_rt69_output__state =  0.0;
-    _vsc2_rt70_output__state =  0.0;
-    _vsc2_rt71_output__state =  0.0;
-    _vsc2_rt72_output__state =  0.0;
-    _vsc2_rt73_output__state =  0.0;
+    _vsc2_rt80_output__state =  0.0;
+    _vsc2_rt81_output__state =  0.0;
+    _vsc2_rt83_output__state =  0.0;
     HIL_OutAO(0x4000, 0.0f);
     {
         _grid_c_function2__count = 0 ;
@@ -2715,8 +2605,8 @@ void ReInit_user_sp_cpu0_dev0() {
     _mgcc_rms_value1__out_state = 0x0;
     _mgcc_rms_value1__filtered_value = 0x0;
     _mgcc_rms_value1__db_timer = 0x0;
-    HIL_OutAO(0x4022, 0.0f);
-    HIL_OutAO(0x402a, 0.0f);
+    HIL_OutAO(0x4021, 0.0f);
+    HIL_OutAO(0x4029, 0.0f);
     {
         _vsc1_meter_meter__TWO_PI = 2.0 * M_PI ;
         _vsc1_meter_meter__KE = 1.414 ;
@@ -2776,22 +2666,6 @@ void ReInit_user_sp_cpu0_dev0() {
     }
     _vsc1_lpf_internal_filter__load_ic = 1;
     {
-        _vsc1_droop_controller1__p = 0 ;
-        _vsc1_droop_controller1__q = 0 ;
-        _vsc1_droop_controller1__p_ref = 0 ;
-        _vsc1_droop_controller1__q_ref = 0 ;
-        _vsc1_droop_controller1__v_ref = 0 ;
-        _vsc1_droop_controller1__w_ref = 0 ;
-        DroopControlInit ( & _vsc1_droop_controller1__droop , 15000 , 15000 , _vsc1_droop_controller1__V0 , _vsc1_droop_controller1__W0 , _vsc1_droop_controller1__DELTA_V , _vsc1_droop_controller1__DELTA_W ) ;
-        _vsc1_droop_controller1__ONE_BY_SQRT2 = 0.70710678118 ;
-        _vsc1_droop_controller1__TS_02KHZ = 0.0005 ;
-        _vsc1_droop_controller1__mod_V_alphaBeta = 0 ;
-        _vsc1_droop_controller1__v_line = 0 ;
-        _vsc1_droop_controller1__v0 = 220 ;
-        _vsc1_droop_controller1__w0 = 0 ;
-        _vsc1_droop_controller1__pcc = 0 ;
-    }
-    {
         _vsc1_current_controller__err = 0 ;
         _vsc1_current_controller__u = 0 ;
         _vsc1_current_controller__u0 = 0 ;
@@ -2799,8 +2673,8 @@ void ReInit_user_sp_cpu0_dev0() {
         _vsc1_current_controller__KP = 8 ;
         _vsc1_current_controller__U_BOUNDARY = 500 ;
     }
-    HIL_OutAO(0x4038, 0.0f);
-    HIL_OutAO(0x4040, 0.0f);
+    HIL_OutAO(0x4037, 0.0f);
+    HIL_OutAO(0x403f, 0.0f);
     {
         _vsc2_meter_meter__TWO_PI = 2.0 * M_PI ;
         _vsc2_meter_meter__KE = 1.414 ;
@@ -2860,22 +2734,6 @@ void ReInit_user_sp_cpu0_dev0() {
     }
     _vsc2_lpf_internal_filter__load_ic = 1;
     {
-        _vsc2_droop_controller1__p = 0 ;
-        _vsc2_droop_controller1__q = 0 ;
-        _vsc2_droop_controller1__p_ref = 0 ;
-        _vsc2_droop_controller1__q_ref = 0 ;
-        _vsc2_droop_controller1__v_ref = 0 ;
-        _vsc2_droop_controller1__w_ref = 0 ;
-        DroopControlInit ( & _vsc2_droop_controller1__droop , 15000 , 15000 , _vsc2_droop_controller1__V0 , _vsc2_droop_controller1__W0 , _vsc2_droop_controller1__DELTA_V , _vsc2_droop_controller1__DELTA_W ) ;
-        _vsc2_droop_controller1__ONE_BY_SQRT2 = 0.70710678118 ;
-        _vsc2_droop_controller1__TS_02KHZ = 0.0005 ;
-        _vsc2_droop_controller1__mod_V_alphaBeta = 0 ;
-        _vsc2_droop_controller1__v_line = 0 ;
-        _vsc2_droop_controller1__v0 = 220 ;
-        _vsc2_droop_controller1__w0 = 0 ;
-        _vsc2_droop_controller1__pcc = 0 ;
-    }
-    {
         _vsc2_current_controller__err = 0 ;
         _vsc2_current_controller__u = 0 ;
         _vsc2_current_controller__u0 = 0 ;
@@ -2910,22 +2768,28 @@ void ReInit_user_sp_cpu0_dev0() {
     HIL_OutAO(0x4018, 0.0f);
     HIL_OutAO(0x4019, 0.0f);
     HIL_OutAO(0x401a, 0.0f);
+    HIL_OutAO(0x401f, 0.0f);
     HIL_OutAO(0x4020, 0.0f);
-    HIL_OutAO(0x4021, 0.0f);
+    HIL_OutAO(0x4022, 0.0f);
     HIL_OutAO(0x4023, 0.0f);
     HIL_OutAO(0x4024, 0.0f);
     HIL_OutAO(0x4025, 0.0f);
     HIL_OutAO(0x4026, 0.0f);
     HIL_OutAO(0x4027, 0.0f);
     HIL_OutAO(0x4028, 0.0f);
-    HIL_OutAO(0x4029, 0.0f);
+    {
+        _vsc1_droop_controller2__v = 0 ;
+        _vsc1_droop_controller2__p = 0 ;
+        _vsc1_droop_controller2__q = 0 ;
+        _vsc1_droop_controller2__p_ref = 0 ;
+        _vsc1_droop_controller2__q_ref = 0 ;
+        initDroop ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__TS_10KHZ , _vsc1_droop_controller2__VZERO , _vsc1_droop_controller2__WZERO , 15000 , 15000 , _vsc1_droop_controller2__DELTA_V , _vsc1_droop_controller2__DELTA_W , _vsc1_droop_controller2__WC , 25 , 0.01 ) ;
+    }
     {
         initAllPassFilter ( & _vsc1_apf__apf , _vsc1_apf__TS , _vsc1_apf__PHI , _vsc1_apf__OMEGA , _vsc1_apf__TAU ) ;
         _vsc1_apf__output = 0 ;
     }
-    HIL_OutAO(0x401e, 0.0f);
-    HIL_OutAO(0x402e, 0.0f);
-    HIL_OutAO(0x4032, 0.0f);
+    HIL_OutAO(0x401d, 0.0f);
     _vsc1_grid_forming_pwm_modulator__update_mask = 3;
     HIL_OutInt32(0x2000080 + _vsc1_grid_forming_pwm_modulator__channels[0], 20000); // divide by 2 is already implemented in hw
     HIL_OutInt32(0x20000c0 + _vsc1_grid_forming_pwm_modulator__channels[0], 2000);
@@ -2942,22 +2806,28 @@ void ReInit_user_sp_cpu0_dev0() {
     HIL_OutInt32(0x2000340 + _vsc1_grid_forming_pwm_modulator__channels[0], 0);
     HIL_OutInt32(0x2000340 + _vsc1_grid_forming_pwm_modulator__channels[1], 0);
     HIL_OutInt32(0x2000140, _vsc1_grid_forming_pwm_modulator__update_mask);
+    HIL_OutAO(0x4035, 0.0f);
     HIL_OutAO(0x4036, 0.0f);
-    HIL_OutAO(0x4037, 0.0f);
+    HIL_OutAO(0x4038, 0.0f);
     HIL_OutAO(0x4039, 0.0f);
     HIL_OutAO(0x403a, 0.0f);
     HIL_OutAO(0x403b, 0.0f);
     HIL_OutAO(0x403c, 0.0f);
     HIL_OutAO(0x403d, 0.0f);
     HIL_OutAO(0x403e, 0.0f);
-    HIL_OutAO(0x403f, 0.0f);
+    {
+        _vsc2_droop_controller2__v = 0 ;
+        _vsc2_droop_controller2__p = 0 ;
+        _vsc2_droop_controller2__q = 0 ;
+        _vsc2_droop_controller2__p_ref = 0 ;
+        _vsc2_droop_controller2__q_ref = 0 ;
+        initDroop ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__TS_10KHZ , _vsc2_droop_controller2__VZERO , _vsc2_droop_controller2__WZERO , 15000 , 15000 , _vsc2_droop_controller2__DELTA_V , _vsc2_droop_controller2__DELTA_W , _vsc2_droop_controller2__WC , 25 , 0.01 ) ;
+    }
     {
         initAllPassFilter ( & _vsc2_apf__apf , _vsc2_apf__TS , _vsc2_apf__PHI , _vsc2_apf__OMEGA , _vsc2_apf__TAU ) ;
         _vsc2_apf__output = 0 ;
     }
-    HIL_OutAO(0x4034, 0.0f);
-    HIL_OutAO(0x4044, 0.0f);
-    HIL_OutAO(0x4048, 0.0f);
+    HIL_OutAO(0x4033, 0.0f);
     _vsc2_grid_forming_pwm_modulator__update_mask = 12;
     HIL_OutInt32(0x2000080 + _vsc2_grid_forming_pwm_modulator__channels[0], 20000); // divide by 2 is already implemented in hw
     HIL_OutInt32(0x20000c0 + _vsc2_grid_forming_pwm_modulator__channels[0], 2000);
@@ -3010,22 +2880,28 @@ void ReInit_user_sp_cpu0_dev0() {
         _load_single_phase_variable_load_single_phase_core1_power_measurement_lref_calc__Psum = 0 ;
         _load_single_phase_variable_load_single_phase_core1_power_measurement_lref_calc__Qsum = 0 ;
     }
-    HIL_OutAO(0x401f, 0.0f);
+    HIL_OutAO(0x402a, 0.0f);
+    HIL_OutAO(0x402b, 0.0f);
+    HIL_OutAO(0x402e, 0.0f);
+    HIL_OutAO(0x401e, 0.0f);
     {
         initVirtualImpedance ( & _vsc1_virtual_impedance__vz , _vsc1_virtual_impedance__TS , _vsc1_virtual_impedance__INDUCTANCE , _vsc1_virtual_impedance__ZETA , _vsc1_virtual_impedance__POLE ) ;
         _vsc1_virtual_impedance__output = 0 ;
     }
-    HIL_OutAO(0x402f, 0.0f);
     HIL_OutAO(0x4030, 0.0f);
     HIL_OutAO(0x4031, 0.0f);
-    HIL_OutAO(0x4035, 0.0f);
+    HIL_OutAO(0x4032, 0.0f);
+    HIL_OutAO(0x4040, 0.0f);
+    HIL_OutAO(0x4041, 0.0f);
+    HIL_OutAO(0x4044, 0.0f);
+    HIL_OutAO(0x4034, 0.0f);
     {
         initVirtualImpedance ( & _vsc2_virtual_impedance__vz , _vsc2_virtual_impedance__TS , _vsc2_virtual_impedance__INDUCTANCE , _vsc2_virtual_impedance__ZETA , _vsc2_virtual_impedance__POLE ) ;
         _vsc2_virtual_impedance__output = 0 ;
     }
-    HIL_OutAO(0x4045, 0.0f);
     HIL_OutAO(0x4046, 0.0f);
     HIL_OutAO(0x4047, 0.0f);
+    HIL_OutAO(0x4048, 0.0f);
     {
         _load_single_phase_variable_load_single_phase_core1_active_power_losses__Psum = 0 ;
         _load_single_phase_variable_load_single_phase_core1_active_power_losses__I = 0 ;
@@ -3041,7 +2917,7 @@ void ReInit_user_sp_cpu0_dev0() {
         _load_single_phase_variable_load_single_phase_core1_reactive_power_losses__Xl = 0 ;
         _load_single_phase_variable_load_single_phase_core1_reactive_power_losses__Xc = 0 ;
     }
-    HIL_OutAO(0x402d, 0.0f);
+    HIL_OutAO(0x402f, 0.0f);
     {
         _vsc1_voltage_controller__TWOPI = 6.2831 ;
         _vsc1_voltage_controller__omega0 = _vsc1_voltage_controller__TWOPI * 60 ;
@@ -3051,7 +2927,6 @@ void ReInit_user_sp_cpu0_dev0() {
         _vsc1_voltage_controller__u_bounded = 0 ;
         _vsc1_voltage_controller__u = 0 ;
         _vsc1_voltage_controller__ref0 = 0 ;
-        _vsc1_voltage_controller__theta0 = 0 ;
         _vsc1_voltage_controller__u0 = 0 ;
         _vsc1_voltage_controller__err0 = 0 ;
         _vsc1_voltage_controller__u3 = 0 ;
@@ -3060,7 +2935,7 @@ void ReInit_user_sp_cpu0_dev0() {
         _vsc1_voltage_controller__err5 = 0 ;
         resonantControlInitMatlab ( & _vsc1_voltage_controller__rc0 , 4.753711597365024e-01 , - 7.994286999974808e-01 , 3.246258254171082e-01 , - 1.998571749993702e+00 , 9.999924628840264e-01 ) ;
     }
-    HIL_OutAO(0x4043, 0.0f);
+    HIL_OutAO(0x4045, 0.0f);
     {
         _vsc2_voltage_controller__TWOPI = 6.2831 ;
         _vsc2_voltage_controller__omega0 = _vsc2_voltage_controller__TWOPI * 60 ;
@@ -3070,7 +2945,6 @@ void ReInit_user_sp_cpu0_dev0() {
         _vsc2_voltage_controller__u_bounded = 0 ;
         _vsc2_voltage_controller__u = 0 ;
         _vsc2_voltage_controller__ref0 = 0 ;
-        _vsc2_voltage_controller__theta0 = 0 ;
         _vsc2_voltage_controller__u0 = 0 ;
         _vsc2_voltage_controller__err0 = 0 ;
         _vsc2_voltage_controller__u3 = 0 ;
@@ -3079,12 +2953,10 @@ void ReInit_user_sp_cpu0_dev0() {
         _vsc2_voltage_controller__err5 = 0 ;
         resonantControlInitMatlab ( & _vsc2_voltage_controller__rc0 , 4.753711597365024e-01 , - 7.994286999974808e-01 , 3.246258254171082e-01 , - 1.998571749993702e+00 , 9.999924628840264e-01 ) ;
     }
-    HIL_OutAO(0x401d, 0.0f);
-    HIL_OutAO(0x402b, 0.0f);
     HIL_OutAO(0x402c, 0.0f);
-    HIL_OutAO(0x4033, 0.0f);
-    HIL_OutAO(0x4041, 0.0f);
+    HIL_OutAO(0x402d, 0.0f);
     HIL_OutAO(0x4042, 0.0f);
+    HIL_OutAO(0x4043, 0.0f);
     HIL_OutAO(0x400d, 0.0f);
     HIL_OutAO(0x400e, 0.0f);
     HIL_OutAO(0x400f, 0.0f);
@@ -4052,9 +3924,9 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     // Generated from the component: VSC1.RT61.Input
     _vsc1_rt61_output__state = _vsc1_il2_ia1__out;
     // Generated from the component: VSC1.Meter.I_t
-    HIL_OutAO(0x4022, (float)_vsc1_meter__ig_ia2__out);
+    HIL_OutAO(0x4021, (float)_vsc1_meter__ig_ia2__out);
     // Generated from the component: VSC1.Meter.V_t
-    HIL_OutAO(0x402a, (float)_vsc1_meter__vg_va2__out);
+    HIL_OutAO(0x4029, (float)_vsc1_meter__vg_va2__out);
     // Generated from the component: VSC1.Meter.Meter
     _vsc1_meter_meter__Igrid = _vsc1_meter__ig_ia2__out;
     _vsc1_meter_meter__Vgrid = _vsc1_meter__vg_va2__out;
@@ -4231,9 +4103,9 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     // Generated from the component: VSC2.RT61.Input
     _vsc2_rt61_output__state = _vsc2_il2_ia1__out;
     // Generated from the component: VSC2.Meter.I_t
-    HIL_OutAO(0x4038, (float)_vsc2_meter__ig_ia2__out);
+    HIL_OutAO(0x4037, (float)_vsc2_meter__ig_ia2__out);
     // Generated from the component: VSC2.Meter.V_t
-    HIL_OutAO(0x4040, (float)_vsc2_meter__vg_va2__out);
+    HIL_OutAO(0x403f, (float)_vsc2_meter__vg_va2__out);
     // Generated from the component: VSC2.Meter.Meter
     _vsc2_meter_meter__Igrid = _vsc2_meter__ig_ia2__out;
     _vsc2_meter_meter__Vgrid = _vsc2_meter__vg_va2__out;
@@ -4590,23 +4462,23 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     // Generated from the component: MGCC.Single phase PLL1.Gain2
     _mgcc_single_phase_pll1_gain2__out = 0.4 * _mgcc_single_phase_pll1_sum1__out;
     // Generated from the component: VSC1.Meter.Freq
-    HIL_OutAO(0x4020, (float)_vsc1_meter_meter__f);
+    HIL_OutAO(0x401f, (float)_vsc1_meter_meter__f);
     // Generated from the component: VSC1.Meter.I_RMS
-    HIL_OutAO(0x4021, (float)_vsc1_meter_meter__Irms);
+    HIL_OutAO(0x4020, (float)_vsc1_meter_meter__Irms);
     // Generated from the component: VSC1.Meter.POWER_P
-    HIL_OutAO(0x4023, (float)_vsc1_meter_meter__Po);
+    HIL_OutAO(0x4022, (float)_vsc1_meter_meter__Po);
     // Generated from the component: VSC1.Meter.POWER_PF
-    HIL_OutAO(0x4024, (float)_vsc1_meter_meter__pf);
+    HIL_OutAO(0x4023, (float)_vsc1_meter_meter__pf);
     // Generated from the component: VSC1.Meter.POWER_Q
-    HIL_OutAO(0x4025, (float)_vsc1_meter_meter__Qo);
+    HIL_OutAO(0x4024, (float)_vsc1_meter_meter__Qo);
     // Generated from the component: VSC1.Meter.POWER_S
-    HIL_OutAO(0x4026, (float)_vsc1_meter_meter__So);
+    HIL_OutAO(0x4025, (float)_vsc1_meter_meter__So);
     // Generated from the component: VSC1.Meter.V_RMS
-    HIL_OutAO(0x4027, (float)_vsc1_meter_meter__Vrms);
+    HIL_OutAO(0x4026, (float)_vsc1_meter_meter__Vrms);
     // Generated from the component: VSC1.Meter.V_alpha
-    HIL_OutAO(0x4028, (float)_vsc1_meter_meter__Valpha);
+    HIL_OutAO(0x4027, (float)_vsc1_meter_meter__Valpha);
     // Generated from the component: VSC1.Meter.V_beta
-    HIL_OutAO(0x4029, (float)_vsc1_meter_meter__Vbeta);
+    HIL_OutAO(0x4028, (float)_vsc1_meter_meter__Vbeta);
     // Generated from the component: VSC1.Meter.out_bus
     _vsc1_meter_out_bus__out[0] = _vsc1_meter__vg_va2__out;
     _vsc1_meter_out_bus__out[1] = _vsc1_meter__ig_ia2__out;
@@ -4640,23 +4512,23 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     }
     HIL_OutInt32(0x2000140, _vsc1_grid_forming_pwm_modulator__update_mask);
     // Generated from the component: VSC2.Meter.Freq
-    HIL_OutAO(0x4036, (float)_vsc2_meter_meter__f);
+    HIL_OutAO(0x4035, (float)_vsc2_meter_meter__f);
     // Generated from the component: VSC2.Meter.I_RMS
-    HIL_OutAO(0x4037, (float)_vsc2_meter_meter__Irms);
+    HIL_OutAO(0x4036, (float)_vsc2_meter_meter__Irms);
     // Generated from the component: VSC2.Meter.POWER_P
-    HIL_OutAO(0x4039, (float)_vsc2_meter_meter__Po);
+    HIL_OutAO(0x4038, (float)_vsc2_meter_meter__Po);
     // Generated from the component: VSC2.Meter.POWER_PF
-    HIL_OutAO(0x403a, (float)_vsc2_meter_meter__pf);
+    HIL_OutAO(0x4039, (float)_vsc2_meter_meter__pf);
     // Generated from the component: VSC2.Meter.POWER_Q
-    HIL_OutAO(0x403b, (float)_vsc2_meter_meter__Qo);
+    HIL_OutAO(0x403a, (float)_vsc2_meter_meter__Qo);
     // Generated from the component: VSC2.Meter.POWER_S
-    HIL_OutAO(0x403c, (float)_vsc2_meter_meter__So);
+    HIL_OutAO(0x403b, (float)_vsc2_meter_meter__So);
     // Generated from the component: VSC2.Meter.V_RMS
-    HIL_OutAO(0x403d, (float)_vsc2_meter_meter__Vrms);
+    HIL_OutAO(0x403c, (float)_vsc2_meter_meter__Vrms);
     // Generated from the component: VSC2.Meter.V_alpha
-    HIL_OutAO(0x403e, (float)_vsc2_meter_meter__Valpha);
+    HIL_OutAO(0x403d, (float)_vsc2_meter_meter__Valpha);
     // Generated from the component: VSC2.Meter.V_beta
-    HIL_OutAO(0x403f, (float)_vsc2_meter_meter__Vbeta);
+    HIL_OutAO(0x403e, (float)_vsc2_meter_meter__Vbeta);
     // Generated from the component: VSC2.Meter.out_bus
     _vsc2_meter_out_bus__out[0] = _vsc2_meter__vg_va2__out;
     _vsc2_meter_out_bus__out[1] = _vsc2_meter__ig_ia2__out;
@@ -4795,14 +4667,14 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     _mgcc_single_phase_pll1_sum2__out = _mgcc_single_phase_pll1_gain2__out - _mgcc_single_phase_pll1_integrator2__out;
     // Generated from the component: VSC1.Meter.meas out
     // Generated from the component: VSC1.VSC1_COM
-    HIL_OutAO(0x402f, (float)_vsc1_bus_join1__out[0]);
-    HIL_OutAO(0x4030, (float)_vsc1_bus_join1__out[1]);
-    HIL_OutAO(0x4031, (float)_vsc1_bus_join1__out[2]);
+    HIL_OutAO(0x4030, (float)_vsc1_bus_join1__out[0]);
+    HIL_OutAO(0x4031, (float)_vsc1_bus_join1__out[1]);
+    HIL_OutAO(0x4032, (float)_vsc1_bus_join1__out[2]);
     // Generated from the component: VSC2.Meter.meas out
     // Generated from the component: VSC2.VSC1_COM
-    HIL_OutAO(0x4045, (float)_vsc2_bus_join1__out[0]);
-    HIL_OutAO(0x4046, (float)_vsc2_bus_join1__out[1]);
-    HIL_OutAO(0x4047, (float)_vsc2_bus_join1__out[2]);
+    HIL_OutAO(0x4046, (float)_vsc2_bus_join1__out[0]);
+    HIL_OutAO(0x4047, (float)_vsc2_bus_join1__out[1]);
+    HIL_OutAO(0x4048, (float)_vsc2_bus_join1__out[2]);
     // Generated from the component: Load.Single-phase Variable Load.Single phase core1.Relational operator2
     _load_single_phase_variable_load_single_phase_core1_relational_operator2__out = (_load_single_phase_variable_load_single_phase_core1_abs5__out >= _load_single_phase_variable_load_single_phase_core1_abs3__out) ? 1 : 0;
     // Generated from the component: Load.Single-phase Variable Load.Single phase core1.Power measurement.Termination12
@@ -4916,14 +4788,14 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     _vsc1_product1__out = (_vsc1_constant9__out * _vsc1_bus_split1__out);
     // Generated from the component: VSC1.Product2
     _vsc1_product2__out = (_vsc1_constant9__out * _vsc1_bus_split1__out1);
-    // Generated from the component: VSC1.RT64.Input
-    _vsc1_rt64_output__state = _vsc1_bus_split1__out2;
+    // Generated from the component: VSC1.RT83.Input
+    _vsc1_rt83_output__state = _vsc1_bus_split1__out2;
     // Generated from the component: VSC2.Product1
     _vsc2_product1__out = (_vsc2_constant9__out * _vsc2_bus_split1__out);
     // Generated from the component: VSC2.Product2
     _vsc2_product2__out = (_vsc2_constant9__out * _vsc2_bus_split1__out1);
-    // Generated from the component: VSC2.RT64.Input
-    _vsc2_rt64_output__state = _vsc2_bus_split1__out2;
+    // Generated from the component: VSC2.RT83.Input
+    _vsc2_rt83_output__state = _vsc2_bus_split1__out2;
     // Generated from the component: MGCC.Single phase PLL1.Product1
     _mgcc_single_phase_pll1_product1__out = (_mgcc_single_phase_pll1_sum2__out * _mgcc_single_phase_pll1_integrator5__out);
     // Generated from the component: Load.Single-phase Variable Load.Single phase core1.Grid synchronization.Peak calc.Mathematical function1
@@ -4941,14 +4813,14 @@ void TimerCounterHandler_0_user_sp_cpu0_dev0() {
     _load_single_phase_variable_load_single_phase_core1_bus_join1__out[3] = _load_single_phase_variable_load_single_phase_core1_f_to_w9__out;
     // Generated from the component: MGCC.Single phase PLL1.Limit1
     _mgcc_single_phase_pll1_limit1__out = MAX(_mgcc_single_phase_pll1_math1__out, 1e-05);
-    // Generated from the component: VSC1.RT68.Input
-    _vsc1_rt68_output__state = _vsc1_product1__out;
-    // Generated from the component: VSC1.RT69.Input
-    _vsc1_rt69_output__state = _vsc1_product2__out;
-    // Generated from the component: VSC2.RT68.Input
-    _vsc2_rt68_output__state = _vsc2_product1__out;
-    // Generated from the component: VSC2.RT69.Input
-    _vsc2_rt69_output__state = _vsc2_product2__out;
+    // Generated from the component: VSC1.RT80.Input
+    _vsc1_rt80_output__state = _vsc1_product1__out;
+    // Generated from the component: VSC1.RT81.Input
+    _vsc1_rt81_output__state = _vsc1_product2__out;
+    // Generated from the component: VSC2.RT80.Input
+    _vsc2_rt80_output__state = _vsc2_product1__out;
+    // Generated from the component: VSC2.RT81.Input
+    _vsc2_rt81_output__state = _vsc2_product2__out;
     // Generated from the component: Load.Single-phase Variable Load.Single phase core1.Grid synchronization.Product4
     _load_single_phase_variable_load_single_phase_core1_grid_synchronization_product4__out = (_load_single_phase_variable_load_single_phase_core1_single_phase_pll1_c_function1__vq) * 1.0 / (_load_single_phase_variable_load_single_phase_core1_grid_synchronization_peak_calc_mathematical_function1__out);
     // Generated from the component: Load.Single-phase Variable Load.Single phase core1.Single phase PLL1.Product8
@@ -5758,9 +5630,9 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
     // Set tunable parameters
     //////////////////////////////////////////////////////////////////////////
     // Generated from the component: VSC1.Constant13
-    // Generated from the component: VSC1.Constant18
+    // Generated from the component: VSC1.Constant19
     // Generated from the component: VSC2.Constant13
-    // Generated from the component: VSC2.Constant18
+    // Generated from the component: VSC2.Constant19
 //////////////////////////////////////////////////////////////////////////
     // Output block
     //////////////////////////////////////////////////////////////////////////
@@ -5769,58 +5641,46 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
     _vsc1_fc__out = XIo_InFloat(0x55000130);
     // Generated from the component: VSC1.KI
     _vsc1_ki__out = XIo_InFloat(0x55000134);
-    // Generated from the component: VSC1.KP
-    _vsc1_kp__out = XIo_InFloat(0x55000138);
     // Generated from the component: VSC1.KV
-    _vsc1_kv__out = XIo_InFloat(0x5500013c);
-    // Generated from the component: VSC1.RT18.Output
-    _vsc1_rt18_output__out = _vsc1_rt18_output__state;
+    _vsc1_kv__out = XIo_InFloat(0x55000138);
     // Generated from the component: VSC1.RT19.Output
     _vsc1_rt19_output__out = _vsc1_rt19_output__state;
-    // Generated from the component: VSC1.RT24.Output
-    _vsc1_rt24_output__out = _vsc1_rt24_output__state;
     // Generated from the component: VSC1.RT42.Output
     _vsc1_rt42_output__out = _vsc1_rt42_output__state;
     // Generated from the component: VSC1.RT43.Output
     _vsc1_rt43_output__out = _vsc1_rt43_output__state;
     // Generated from the component: VSC1.RT61.Output
     _vsc1_rt61_output__out = _vsc1_rt61_output__state;
-    // Generated from the component: VSC1.V0
-    _vsc1_v0__out = XIo_InFloat(0x55000140);
+    // Generated from the component: VSC1.RT80.Output
+    _vsc1_rt80_output__out = _vsc1_rt80_output__state;
+    // Generated from the component: VSC1.RT81.Output
+    _vsc1_rt81_output__out = _vsc1_rt81_output__state;
+    // Generated from the component: VSC1.RT83.Output
+    _vsc1_rt83_output__out = _vsc1_rt83_output__state;
     // Generated from the component: VSC1.VZ
-    _vsc1_vz__out = XIo_InFloat(0x55000144);
+    _vsc1_vz__out = XIo_InFloat(0x5500013c);
     // Generated from the component: VSC2.FC
-    _vsc2_fc__out = XIo_InFloat(0x55000148);
+    _vsc2_fc__out = XIo_InFloat(0x55000140);
     // Generated from the component: VSC2.KI
-    _vsc2_ki__out = XIo_InFloat(0x5500014c);
-    // Generated from the component: VSC2.KP
-    _vsc2_kp__out = XIo_InFloat(0x55000150);
+    _vsc2_ki__out = XIo_InFloat(0x55000144);
     // Generated from the component: VSC2.KV
-    _vsc2_kv__out = XIo_InFloat(0x55000154);
-    // Generated from the component: VSC2.RT18.Output
-    _vsc2_rt18_output__out = _vsc2_rt18_output__state;
+    _vsc2_kv__out = XIo_InFloat(0x55000148);
     // Generated from the component: VSC2.RT19.Output
     _vsc2_rt19_output__out = _vsc2_rt19_output__state;
-    // Generated from the component: VSC2.RT24.Output
-    _vsc2_rt24_output__out = _vsc2_rt24_output__state;
     // Generated from the component: VSC2.RT42.Output
     _vsc2_rt42_output__out = _vsc2_rt42_output__state;
     // Generated from the component: VSC2.RT43.Output
     _vsc2_rt43_output__out = _vsc2_rt43_output__state;
     // Generated from the component: VSC2.RT61.Output
     _vsc2_rt61_output__out = _vsc2_rt61_output__state;
-    // Generated from the component: VSC2.V0
-    _vsc2_v0__out = XIo_InFloat(0x55000158);
+    // Generated from the component: VSC2.RT80.Output
+    _vsc2_rt80_output__out = _vsc2_rt80_output__state;
+    // Generated from the component: VSC2.RT81.Output
+    _vsc2_rt81_output__out = _vsc2_rt81_output__state;
+    // Generated from the component: VSC2.RT83.Output
+    _vsc2_rt83_output__out = _vsc2_rt83_output__state;
     // Generated from the component: VSC2.VZ
-    _vsc2_vz__out = XIo_InFloat(0x5500015c);
-    // Generated from the component: VSC1.RT67.Input
-    _vsc1_rt67_output__state = _vsc1_constant18__out;
-    // Generated from the component: VSC1.RT73.Input
-    _vsc1_rt73_output__state = _vsc1_ki__out;
-    // Generated from the component: VSC1.RT72.Input
-    _vsc1_rt72_output__state = _vsc1_kp__out;
-    // Generated from the component: VSC1.RT71.Input
-    _vsc1_rt71_output__state = _vsc1_kv__out;
+    _vsc2_vz__out = XIo_InFloat(0x5500014c);
     // Generated from the component: VSC1.SOGI_QSG
     _vsc1_sogi_qsg__IN_IL2 = _vsc1_rt42_output__out;
     _vsc1_sogi_qsg__IN_VGRID = _vsc1_rt43_output__out;
@@ -5873,16 +5733,6 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
         }
         _vsc1_lpf_internal_filter__y = 1 * _vsc1_lpf_internal_filter__y_next ;
     }
-    // Generated from the component: VSC1.RT70.Input
-    _vsc1_rt70_output__state = _vsc1_v0__out;
-    // Generated from the component: VSC2.RT67.Input
-    _vsc2_rt67_output__state = _vsc2_constant18__out;
-    // Generated from the component: VSC2.RT73.Input
-    _vsc2_rt73_output__state = _vsc2_ki__out;
-    // Generated from the component: VSC2.RT72.Input
-    _vsc2_rt72_output__state = _vsc2_kp__out;
-    // Generated from the component: VSC2.RT71.Input
-    _vsc2_rt71_output__state = _vsc2_kv__out;
     // Generated from the component: VSC2.SOGI_QSG
     _vsc2_sogi_qsg__IN_IL2 = _vsc2_rt42_output__out;
     _vsc2_sogi_qsg__IN_VGRID = _vsc2_rt43_output__out;
@@ -5935,16 +5785,46 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
         }
         _vsc2_lpf_internal_filter__y = 1 * _vsc2_lpf_internal_filter__y_next ;
     }
-    // Generated from the component: VSC2.RT70.Input
-    _vsc2_rt70_output__state = _vsc2_v0__out;
-    // Generated from the component: VSC1.RT62.Input
-    _vsc1_rt62_output__state = _vsc1_sogi_qsg__OUT_V_QUAD;
-    // Generated from the component: VSC1.RT63.Input
-    _vsc1_rt63_output__state = _vsc1_sogi_qsg__OUT_I;
-    // Generated from the component: VSC1.RT65.Input
-    _vsc1_rt65_output__state = _vsc1_sogi_qsg__OUT_V;
-    // Generated from the component: VSC1.RT66.Input
-    _vsc1_rt66_output__state = _vsc1_sogi_qsg__OUT_I_QUAD;
+    // Generated from the component: VSC1.DROOP_CONTROLLER2
+    _vsc1_droop_controller2__IN_ENABLE = _vsc1_constant19__out;
+    _vsc1_droop_controller2__IN_I_DIR = _vsc1_sogi_qsg__OUT_I;
+    _vsc1_droop_controller2__IN_I_QUAD = _vsc1_sogi_qsg__OUT_I_QUAD;
+    _vsc1_droop_controller2__IN_KI = _vsc1_ki__out;
+    _vsc1_droop_controller2__IN_KV = _vsc1_kv__out;
+    _vsc1_droop_controller2__IN_MICROGRID_STATUS = _vsc1_rt83_output__out;
+    _vsc1_droop_controller2__IN_P0 = _vsc1_rt80_output__out;
+    _vsc1_droop_controller2__IN_Q0 = _vsc1_rt81_output__out;
+    _vsc1_droop_controller2__IN_V_DIR = _vsc1_sogi_qsg__OUT_V;
+    _vsc1_droop_controller2__IN_V_QUAD = _vsc1_sogi_qsg__OUT_V_QUAD;
+    {
+        if ( _vsc1_droop_controller2__IN_ENABLE == 1 )     {
+            if ( _vsc1_droop_controller2__IN_MICROGRID_STATUS == 1 )         {
+                setStatus ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__TIED ) ;
+                if ( _vsc1_droop_controller2__IN_P0 > _vsc1_droop_controller2__p_ref ) _vsc1_droop_controller2__p_ref += 2 ;
+                if ( _vsc1_droop_controller2__IN_P0 < _vsc1_droop_controller2__p_ref ) _vsc1_droop_controller2__p_ref -= 2 ;
+                if ( _vsc1_droop_controller2__IN_Q0 > _vsc1_droop_controller2__q_ref ) _vsc1_droop_controller2__q_ref += 2 ;
+                if ( _vsc1_droop_controller2__IN_Q0 < _vsc1_droop_controller2__q_ref ) _vsc1_droop_controller2__q_ref -= 2 ;
+                setP0 ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__p_ref ) ;
+                setQ0 ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__q_ref ) ;
+            }
+            else         {
+                setStatus ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__ISLANDED ) ;
+                setP0 ( & _vsc1_droop_controller2__droop , 0 ) ;
+                setQ0 ( & _vsc1_droop_controller2__droop , 0 ) ;
+            }
+            executeDroop ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__IN_V_DIR , _vsc1_droop_controller2__IN_V_QUAD , _vsc1_droop_controller2__IN_I_DIR , _vsc1_droop_controller2__IN_I_QUAD , & _vsc1_droop_controller2__v , & _vsc1_droop_controller2__p , & _vsc1_droop_controller2__q ) ;
+            setKi ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__IN_KI ) ;
+            setKv ( & _vsc1_droop_controller2__droop , _vsc1_droop_controller2__IN_KV ) ;
+            _vsc1_droop_controller2__OUT_V = _vsc1_droop_controller2__v ;
+            _vsc1_droop_controller2__OUT_PF = _vsc1_droop_controller2__p ;
+            _vsc1_droop_controller2__OUT_QF = _vsc1_droop_controller2__q ;
+        }
+        else     {
+            _vsc1_droop_controller2__OUT_V = 0 ;
+            _vsc1_droop_controller2__OUT_PF = 0 ;
+            _vsc1_droop_controller2__OUT_QF = 0 ;
+        }
+    }
     // Generated from the component: VSC1.APF
     _vsc1_apf__IN_IL2_F = _vsc1_lpf_internal_filter__y;
     {
@@ -5952,15 +5832,47 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
         _vsc1_apf__OUT_IL2_PC = _vsc1_apf__output ;
     }
     // Generated from the component: VSC1.IL2_F
-    HIL_OutAO(0x401e, (float)_vsc1_lpf_internal_filter__y);
-    // Generated from the component: VSC2.RT62.Input
-    _vsc2_rt62_output__state = _vsc2_sogi_qsg__OUT_V_QUAD;
-    // Generated from the component: VSC2.RT63.Input
-    _vsc2_rt63_output__state = _vsc2_sogi_qsg__OUT_I;
-    // Generated from the component: VSC2.RT65.Input
-    _vsc2_rt65_output__state = _vsc2_sogi_qsg__OUT_V;
-    // Generated from the component: VSC2.RT66.Input
-    _vsc2_rt66_output__state = _vsc2_sogi_qsg__OUT_I_QUAD;
+    HIL_OutAO(0x401d, (float)_vsc1_lpf_internal_filter__y);
+    // Generated from the component: VSC2.DROOP_CONTROLLER2
+    _vsc2_droop_controller2__IN_ENABLE = _vsc2_constant19__out;
+    _vsc2_droop_controller2__IN_I_DIR = _vsc2_sogi_qsg__OUT_I;
+    _vsc2_droop_controller2__IN_I_QUAD = _vsc2_sogi_qsg__OUT_I_QUAD;
+    _vsc2_droop_controller2__IN_KI = _vsc2_ki__out;
+    _vsc2_droop_controller2__IN_KV = _vsc2_kv__out;
+    _vsc2_droop_controller2__IN_MICROGRID_STATUS = _vsc2_rt83_output__out;
+    _vsc2_droop_controller2__IN_P0 = _vsc2_rt80_output__out;
+    _vsc2_droop_controller2__IN_Q0 = _vsc2_rt81_output__out;
+    _vsc2_droop_controller2__IN_V_DIR = _vsc2_sogi_qsg__OUT_V;
+    _vsc2_droop_controller2__IN_V_QUAD = _vsc2_sogi_qsg__OUT_V_QUAD;
+    {
+        if ( _vsc2_droop_controller2__IN_ENABLE == 1 )     {
+            if ( _vsc2_droop_controller2__IN_MICROGRID_STATUS == 1 )         {
+                setStatus ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__TIED ) ;
+                if ( _vsc2_droop_controller2__IN_P0 > _vsc2_droop_controller2__p_ref ) _vsc2_droop_controller2__p_ref += 2 ;
+                if ( _vsc2_droop_controller2__IN_P0 < _vsc2_droop_controller2__p_ref ) _vsc2_droop_controller2__p_ref -= 2 ;
+                if ( _vsc2_droop_controller2__IN_Q0 > _vsc2_droop_controller2__q_ref ) _vsc2_droop_controller2__q_ref += 2 ;
+                if ( _vsc2_droop_controller2__IN_Q0 < _vsc2_droop_controller2__q_ref ) _vsc2_droop_controller2__q_ref -= 2 ;
+                setP0 ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__p_ref ) ;
+                setQ0 ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__q_ref ) ;
+            }
+            else         {
+                setStatus ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__ISLANDED ) ;
+                setP0 ( & _vsc2_droop_controller2__droop , 0 ) ;
+                setQ0 ( & _vsc2_droop_controller2__droop , 0 ) ;
+            }
+            executeDroop ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__IN_V_DIR , _vsc2_droop_controller2__IN_V_QUAD , _vsc2_droop_controller2__IN_I_DIR , _vsc2_droop_controller2__IN_I_QUAD , & _vsc2_droop_controller2__v , & _vsc2_droop_controller2__p , & _vsc2_droop_controller2__q ) ;
+            setKi ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__IN_KI ) ;
+            setKv ( & _vsc2_droop_controller2__droop , _vsc2_droop_controller2__IN_KV ) ;
+            _vsc2_droop_controller2__OUT_V = _vsc2_droop_controller2__v ;
+            _vsc2_droop_controller2__OUT_PF = _vsc2_droop_controller2__p ;
+            _vsc2_droop_controller2__OUT_QF = _vsc2_droop_controller2__q ;
+        }
+        else     {
+            _vsc2_droop_controller2__OUT_V = 0 ;
+            _vsc2_droop_controller2__OUT_PF = 0 ;
+            _vsc2_droop_controller2__OUT_QF = 0 ;
+        }
+    }
     // Generated from the component: VSC2.APF
     _vsc2_apf__IN_IL2_F = _vsc2_lpf_internal_filter__y;
     {
@@ -5968,9 +5880,15 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
         _vsc2_apf__OUT_IL2_PC = _vsc2_apf__output ;
     }
     // Generated from the component: VSC2.IL2_F
-    HIL_OutAO(0x4034, (float)_vsc2_lpf_internal_filter__y);
+    HIL_OutAO(0x4033, (float)_vsc2_lpf_internal_filter__y);
+    // Generated from the component: VSC1.PF
+    HIL_OutAO(0x402a, (float)_vsc1_droop_controller2__OUT_PF);
+    // Generated from the component: VSC1.QF
+    HIL_OutAO(0x402b, (float)_vsc1_droop_controller2__OUT_QF);
+    // Generated from the component: VSC1.V
+    HIL_OutAO(0x402e, (float)_vsc1_droop_controller2__OUT_V);
     // Generated from the component: VSC1.IL2_PC
-    HIL_OutAO(0x401f, (float)_vsc1_apf__OUT_IL2_PC);
+    HIL_OutAO(0x401e, (float)_vsc1_apf__OUT_IL2_PC);
     // Generated from the component: VSC1.VIRTUAL_IMPEDANCE
     _vsc1_virtual_impedance__IN_IL2_PC = _vsc1_apf__OUT_IL2_PC;
     _vsc1_virtual_impedance__IN_VIRTUAL_INDUCTANCE = _vsc1_vz__out;
@@ -5979,8 +5897,14 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
         executeVirtualImpedance ( & _vsc1_virtual_impedance__vz , _vsc1_virtual_impedance__IN_IL2_PC , & _vsc1_virtual_impedance__output ) ;
         _vsc1_virtual_impedance__OUT_VL_DROP = _vsc1_virtual_impedance__output ;
     }
+    // Generated from the component: VSC2.PF
+    HIL_OutAO(0x4040, (float)_vsc2_droop_controller2__OUT_PF);
+    // Generated from the component: VSC2.QF
+    HIL_OutAO(0x4041, (float)_vsc2_droop_controller2__OUT_QF);
+    // Generated from the component: VSC2.V
+    HIL_OutAO(0x4044, (float)_vsc2_droop_controller2__OUT_V);
     // Generated from the component: VSC2.IL2_PC
-    HIL_OutAO(0x4035, (float)_vsc2_apf__OUT_IL2_PC);
+    HIL_OutAO(0x4034, (float)_vsc2_apf__OUT_IL2_PC);
     // Generated from the component: VSC2.VIRTUAL_IMPEDANCE
     _vsc2_virtual_impedance__IN_IL2_PC = _vsc2_apf__OUT_IL2_PC;
     _vsc2_virtual_impedance__IN_VIRTUAL_INDUCTANCE = _vsc2_vz__out;
@@ -5990,19 +5914,15 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
         _vsc2_virtual_impedance__OUT_VL_DROP = _vsc2_virtual_impedance__output ;
     }
     // Generated from the component: VSC1.VL_DROP
-    HIL_OutAO(0x402d, (float)_vsc1_virtual_impedance__OUT_VL_DROP);
+    HIL_OutAO(0x402f, (float)_vsc1_virtual_impedance__OUT_VL_DROP);
     // Generated from the component: VSC1.VOLTAGE_CONTROLLER
     _vsc1_voltage_controller__IN_ENABLE = _vsc1_constant13__out;
-    _vsc1_voltage_controller__IN_OMEGA_REF = _vsc1_rt18_output__out;
     _vsc1_voltage_controller__IN_VC = _vsc1_rt19_output__out;
     _vsc1_voltage_controller__IN_VL_DROP = _vsc1_virtual_impedance__OUT_VL_DROP;
-    _vsc1_voltage_controller__IN_V_REF = _vsc1_rt24_output__out;
+    _vsc1_voltage_controller__IN_V_REF = _vsc1_droop_controller2__OUT_V;
     {
         if ( _vsc1_voltage_controller__IN_ENABLE == 1 )     {
-            _vsc1_voltage_controller__theta0 = _vsc1_voltage_controller__TS_10KHZ * _vsc1_voltage_controller__IN_OMEGA_REF + _vsc1_voltage_controller__theta0 ;
-            if ( _vsc1_voltage_controller__theta0 >= _vsc1_voltage_controller__TWOPI ) _vsc1_voltage_controller__theta0 -= _vsc1_voltage_controller__TWOPI ;
-            _vsc1_voltage_controller__ref0 = _vsc1_voltage_controller__SQRT2 * _vsc1_voltage_controller__IN_V_REF * sin ( _vsc1_voltage_controller__theta0 ) ;
-            _vsc1_voltage_controller__ref0 = _vsc1_voltage_controller__ref0 - _vsc1_voltage_controller__IN_VL_DROP ;
+            _vsc1_voltage_controller__ref0 = _vsc1_voltage_controller__IN_V_REF - _vsc1_voltage_controller__IN_VL_DROP ;
             executeResonant ( & _vsc1_voltage_controller__rc0 , _vsc1_voltage_controller__ref0 , _vsc1_voltage_controller__IN_VC , & _vsc1_voltage_controller__u0 , & _vsc1_voltage_controller__err0 ) ;
             _vsc1_voltage_controller__u = _vsc1_voltage_controller__u0 ;
             _vsc1_voltage_controller__u_bounded = _vsc1_voltage_controller__u ;
@@ -6010,29 +5930,23 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
                 _vsc1_voltage_controller__u_bounded = _vsc1_voltage_controller__U_BOUNDARY * _vsc1_voltage_controller__u / sqrt ( _vsc1_voltage_controller__u * _vsc1_voltage_controller__u ) ;
             }
             _vsc1_voltage_controller__OUT_V_CTRL = _vsc1_voltage_controller__u_bounded ;
-            _vsc1_voltage_controller__OUT_V_REF_CTRL = _vsc1_voltage_controller__ref0 ;
-            _vsc1_voltage_controller__OUT_VL_DROP = _vsc1_voltage_controller__IN_VL_DROP ;
+            _vsc1_voltage_controller__OUT_V_REF = _vsc1_voltage_controller__ref0 ;
         }
         else     {
             _vsc1_voltage_controller__OUT_V_CTRL = 0 ;
-            _vsc1_voltage_controller__OUT_V_REF_CTRL = 0 ;
-            _vsc1_voltage_controller__OUT_VL_DROP = 0 ;
+            _vsc1_voltage_controller__OUT_V_REF = 0 ;
         }
     }
     // Generated from the component: VSC2.VL_DROP
-    HIL_OutAO(0x4043, (float)_vsc2_virtual_impedance__OUT_VL_DROP);
+    HIL_OutAO(0x4045, (float)_vsc2_virtual_impedance__OUT_VL_DROP);
     // Generated from the component: VSC2.VOLTAGE_CONTROLLER
     _vsc2_voltage_controller__IN_ENABLE = _vsc2_constant13__out;
-    _vsc2_voltage_controller__IN_OMEGA_REF = _vsc2_rt18_output__out;
     _vsc2_voltage_controller__IN_VC = _vsc2_rt19_output__out;
     _vsc2_voltage_controller__IN_VL_DROP = _vsc2_virtual_impedance__OUT_VL_DROP;
-    _vsc2_voltage_controller__IN_V_REF = _vsc2_rt24_output__out;
+    _vsc2_voltage_controller__IN_V_REF = _vsc2_droop_controller2__OUT_V;
     {
         if ( _vsc2_voltage_controller__IN_ENABLE == 1 )     {
-            _vsc2_voltage_controller__theta0 = _vsc2_voltage_controller__TS_10KHZ * _vsc2_voltage_controller__IN_OMEGA_REF + _vsc2_voltage_controller__theta0 ;
-            if ( _vsc2_voltage_controller__theta0 >= _vsc2_voltage_controller__TWOPI ) _vsc2_voltage_controller__theta0 -= _vsc2_voltage_controller__TWOPI ;
-            _vsc2_voltage_controller__ref0 = _vsc2_voltage_controller__SQRT2 * _vsc2_voltage_controller__IN_V_REF * sin ( _vsc2_voltage_controller__theta0 ) ;
-            _vsc2_voltage_controller__ref0 = _vsc2_voltage_controller__ref0 - _vsc2_voltage_controller__IN_VL_DROP ;
+            _vsc2_voltage_controller__ref0 = _vsc2_voltage_controller__IN_V_REF - _vsc2_voltage_controller__IN_VL_DROP ;
             executeResonant ( & _vsc2_voltage_controller__rc0 , _vsc2_voltage_controller__ref0 , _vsc2_voltage_controller__IN_VC , & _vsc2_voltage_controller__u0 , & _vsc2_voltage_controller__err0 ) ;
             _vsc2_voltage_controller__u = _vsc2_voltage_controller__u0 ;
             _vsc2_voltage_controller__u_bounded = _vsc2_voltage_controller__u ;
@@ -6040,31 +5954,25 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
                 _vsc2_voltage_controller__u_bounded = _vsc2_voltage_controller__U_BOUNDARY * _vsc2_voltage_controller__u / sqrt ( _vsc2_voltage_controller__u * _vsc2_voltage_controller__u ) ;
             }
             _vsc2_voltage_controller__OUT_V_CTRL = _vsc2_voltage_controller__u_bounded ;
-            _vsc2_voltage_controller__OUT_V_REF_CTRL = _vsc2_voltage_controller__ref0 ;
-            _vsc2_voltage_controller__OUT_VL_DROP = _vsc2_voltage_controller__IN_VL_DROP ;
+            _vsc2_voltage_controller__OUT_V_REF = _vsc2_voltage_controller__ref0 ;
         }
         else     {
             _vsc2_voltage_controller__OUT_V_CTRL = 0 ;
-            _vsc2_voltage_controller__OUT_V_REF_CTRL = 0 ;
-            _vsc2_voltage_controller__OUT_VL_DROP = 0 ;
+            _vsc2_voltage_controller__OUT_V_REF = 0 ;
         }
     }
-    // Generated from the component: VSC1.AAAA
-    HIL_OutAO(0x401d, (float)_vsc1_voltage_controller__OUT_VL_DROP);
+    // Generated from the component: VSC1.REF_IL1
+    HIL_OutAO(0x402c, (float)_vsc1_voltage_controller__OUT_V_CTRL);
     // Generated from the component: VSC1.REF_VC
-    HIL_OutAO(0x402b, (float)_vsc1_voltage_controller__OUT_V_REF_CTRL);
+    HIL_OutAO(0x402d, (float)_vsc1_voltage_controller__OUT_V_REF);
     // Generated from the component: VSC1.RT30.Input
     _vsc1_rt30_output__state = _vsc1_voltage_controller__OUT_V_CTRL;
-    // Generated from the component: VSC1.UV
-    HIL_OutAO(0x402c, (float)_vsc1_voltage_controller__OUT_V_CTRL);
-    // Generated from the component: VSC2.AAAA
-    HIL_OutAO(0x4033, (float)_vsc2_voltage_controller__OUT_VL_DROP);
+    // Generated from the component: VSC2.REF_IL1
+    HIL_OutAO(0x4042, (float)_vsc2_voltage_controller__OUT_V_CTRL);
     // Generated from the component: VSC2.REF_VC
-    HIL_OutAO(0x4041, (float)_vsc2_voltage_controller__OUT_V_REF_CTRL);
+    HIL_OutAO(0x4043, (float)_vsc2_voltage_controller__OUT_V_REF);
     // Generated from the component: VSC2.RT30.Input
     _vsc2_rt30_output__state = _vsc2_voltage_controller__OUT_V_CTRL;
-    // Generated from the component: VSC2.UV
-    HIL_OutAO(0x4042, (float)_vsc2_voltage_controller__OUT_V_CTRL);
 //@cmp.out.block.end
     //////////////////////////////////////////////////////////////////////////
     // Update block
@@ -6074,180 +5982,14 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
     // Generated from the component: VSC1.LPF.Internal filter
     // Generated from the component: VSC2.SOGI_QSG
     // Generated from the component: VSC2.LPF.Internal filter
+    // Generated from the component: VSC1.DROOP_CONTROLLER2
     // Generated from the component: VSC1.APF
+    // Generated from the component: VSC2.DROOP_CONTROLLER2
     // Generated from the component: VSC2.APF
     // Generated from the component: VSC1.VIRTUAL_IMPEDANCE
     // Generated from the component: VSC2.VIRTUAL_IMPEDANCE
     // Generated from the component: VSC1.VOLTAGE_CONTROLLER
     // Generated from the component: VSC2.VOLTAGE_CONTROLLER
-    //@cmp.update.block.end
-}
-void TimerCounterHandler_2_user_sp_cpu0_dev0() {
-#if DEBUG_MODE
-    printf("\n\rTimerCounterHandler_2");
-#endif
-    //////////////////////////////////////////////////////////////////////////
-    // Set tunable parameters
-    //////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-    // Output block
-    //////////////////////////////////////////////////////////////////////////
-    //@cmp.out.block.start
-    // Generated from the component: VSC1.RT62.Output
-    _vsc1_rt62_output__out = _vsc1_rt62_output__state;
-    // Generated from the component: VSC1.RT63.Output
-    _vsc1_rt63_output__out = _vsc1_rt63_output__state;
-    // Generated from the component: VSC1.RT64.Output
-    _vsc1_rt64_output__out = _vsc1_rt64_output__state;
-    // Generated from the component: VSC1.RT65.Output
-    _vsc1_rt65_output__out = _vsc1_rt65_output__state;
-    // Generated from the component: VSC1.RT66.Output
-    _vsc1_rt66_output__out = _vsc1_rt66_output__state;
-    // Generated from the component: VSC1.RT67.Output
-    _vsc1_rt67_output__out = _vsc1_rt67_output__state;
-    // Generated from the component: VSC1.RT68.Output
-    _vsc1_rt68_output__out = _vsc1_rt68_output__state;
-    // Generated from the component: VSC1.RT69.Output
-    _vsc1_rt69_output__out = _vsc1_rt69_output__state;
-    // Generated from the component: VSC1.RT70.Output
-    _vsc1_rt70_output__out = _vsc1_rt70_output__state;
-    // Generated from the component: VSC1.RT71.Output
-    _vsc1_rt71_output__out = _vsc1_rt71_output__state;
-    // Generated from the component: VSC1.RT72.Output
-    _vsc1_rt72_output__out = _vsc1_rt72_output__state;
-    // Generated from the component: VSC1.RT73.Output
-    _vsc1_rt73_output__out = _vsc1_rt73_output__state;
-    // Generated from the component: VSC2.RT62.Output
-    _vsc2_rt62_output__out = _vsc2_rt62_output__state;
-    // Generated from the component: VSC2.RT63.Output
-    _vsc2_rt63_output__out = _vsc2_rt63_output__state;
-    // Generated from the component: VSC2.RT64.Output
-    _vsc2_rt64_output__out = _vsc2_rt64_output__state;
-    // Generated from the component: VSC2.RT65.Output
-    _vsc2_rt65_output__out = _vsc2_rt65_output__state;
-    // Generated from the component: VSC2.RT66.Output
-    _vsc2_rt66_output__out = _vsc2_rt66_output__state;
-    // Generated from the component: VSC2.RT67.Output
-    _vsc2_rt67_output__out = _vsc2_rt67_output__state;
-    // Generated from the component: VSC2.RT68.Output
-    _vsc2_rt68_output__out = _vsc2_rt68_output__state;
-    // Generated from the component: VSC2.RT69.Output
-    _vsc2_rt69_output__out = _vsc2_rt69_output__state;
-    // Generated from the component: VSC2.RT70.Output
-    _vsc2_rt70_output__out = _vsc2_rt70_output__state;
-    // Generated from the component: VSC2.RT71.Output
-    _vsc2_rt71_output__out = _vsc2_rt71_output__state;
-    // Generated from the component: VSC2.RT72.Output
-    _vsc2_rt72_output__out = _vsc2_rt72_output__state;
-    // Generated from the component: VSC2.RT73.Output
-    _vsc2_rt73_output__out = _vsc2_rt73_output__state;
-    // Generated from the component: VSC1.DROOP_CONTROLLER1
-    _vsc1_droop_controller1__IN_ENABLE = _vsc1_rt67_output__out;
-    _vsc1_droop_controller1__IN_I_DIR = _vsc1_rt63_output__out;
-    _vsc1_droop_controller1__IN_I_QUAD = _vsc1_rt66_output__out;
-    _vsc1_droop_controller1__IN_KI = _vsc1_rt73_output__out;
-    _vsc1_droop_controller1__IN_KP = _vsc1_rt72_output__out;
-    _vsc1_droop_controller1__IN_KV = _vsc1_rt71_output__out;
-    _vsc1_droop_controller1__IN_MICROGRID_STATUS = _vsc1_rt64_output__out;
-    _vsc1_droop_controller1__IN_P0 = _vsc1_rt68_output__out;
-    _vsc1_droop_controller1__IN_Q0 = _vsc1_rt69_output__out;
-    _vsc1_droop_controller1__IN_V_DIR = _vsc1_rt65_output__out;
-    _vsc1_droop_controller1__IN_V_PCC = _vsc1_rt70_output__out;
-    _vsc1_droop_controller1__IN_V_QUAD = _vsc1_rt62_output__out;
-    {
-        if ( _vsc1_droop_controller1__IN_ENABLE == 1 )     {
-            if ( _vsc1_droop_controller1__IN_MICROGRID_STATUS == 1 )         {
-                if ( _vsc1_droop_controller1__IN_P0 > _vsc1_droop_controller1__p_ref ) _vsc1_droop_controller1__p_ref += 10 ;
-                if ( _vsc1_droop_controller1__IN_P0 < _vsc1_droop_controller1__p_ref ) _vsc1_droop_controller1__p_ref -= 10 ;
-                if ( _vsc1_droop_controller1__IN_Q0 > _vsc1_droop_controller1__q_ref ) _vsc1_droop_controller1__q_ref += 10 ;
-                if ( _vsc1_droop_controller1__IN_Q0 < _vsc1_droop_controller1__q_ref ) _vsc1_droop_controller1__q_ref -= 10 ;
-                setDroopPQ ( & _vsc1_droop_controller1__droop , _vsc1_droop_controller1__p_ref , _vsc1_droop_controller1__q_ref ) ;
-            }
-            else         {
-                setDroopPQ ( & _vsc1_droop_controller1__droop , 0.0 , 0.0 ) ;
-            }
-            calculateDroopPQ ( & _vsc1_droop_controller1__droop , _vsc1_droop_controller1__IN_V_DIR , _vsc1_droop_controller1__IN_V_QUAD , _vsc1_droop_controller1__IN_I_DIR , _vsc1_droop_controller1__IN_I_QUAD , & _vsc1_droop_controller1__p , & _vsc1_droop_controller1__q ) ;
-            executeDroopControl ( & _vsc1_droop_controller1__droop , & _vsc1_droop_controller1__v_ref , & _vsc1_droop_controller1__w_ref ) ;
-            _vsc1_droop_controller1__mod_V_alphaBeta = _vsc1_droop_controller1__ONE_BY_SQRT2 * sqrt ( _vsc1_droop_controller1__IN_V_DIR * _vsc1_droop_controller1__IN_V_DIR + _vsc1_droop_controller1__IN_V_QUAD * _vsc1_droop_controller1__IN_V_QUAD ) ;
-            _vsc1_droop_controller1__v_line = _vsc1_droop_controller1__v_ref + _vsc1_droop_controller1__IN_KV * ( 220 - _vsc1_droop_controller1__mod_V_alphaBeta ) ;
-            _vsc1_droop_controller1__v0 = _vsc1_droop_controller1__v0 + _vsc1_droop_controller1__v_line * _vsc1_droop_controller1__IN_KI * _vsc1_droop_controller1__TS_02KHZ ;
-            _vsc1_droop_controller1__OUT_V_REF = _vsc1_droop_controller1__v0 ;
-            _vsc1_droop_controller1__OUT_OMEGA_REF = _vsc1_droop_controller1__w_ref ;
-            _vsc1_droop_controller1__OUT_V0 = _vsc1_droop_controller1__v0 ;
-            _vsc1_droop_controller1__OUT_VRMS = _vsc1_droop_controller1__mod_V_alphaBeta ;
-        }
-        else     {
-            _vsc1_droop_controller1__OUT_V_REF = 0 ;
-            _vsc1_droop_controller1__OUT_OMEGA_REF = 0 ;
-            _vsc1_droop_controller1__OUT_V0 = 0 ;
-            _vsc1_droop_controller1__OUT_VRMS = 0 ;
-        }
-    }
-    // Generated from the component: VSC2.DROOP_CONTROLLER1
-    _vsc2_droop_controller1__IN_ENABLE = _vsc2_rt67_output__out;
-    _vsc2_droop_controller1__IN_I_DIR = _vsc2_rt63_output__out;
-    _vsc2_droop_controller1__IN_I_QUAD = _vsc2_rt66_output__out;
-    _vsc2_droop_controller1__IN_KI = _vsc2_rt73_output__out;
-    _vsc2_droop_controller1__IN_KP = _vsc2_rt72_output__out;
-    _vsc2_droop_controller1__IN_KV = _vsc2_rt71_output__out;
-    _vsc2_droop_controller1__IN_MICROGRID_STATUS = _vsc2_rt64_output__out;
-    _vsc2_droop_controller1__IN_P0 = _vsc2_rt68_output__out;
-    _vsc2_droop_controller1__IN_Q0 = _vsc2_rt69_output__out;
-    _vsc2_droop_controller1__IN_V_DIR = _vsc2_rt65_output__out;
-    _vsc2_droop_controller1__IN_V_PCC = _vsc2_rt70_output__out;
-    _vsc2_droop_controller1__IN_V_QUAD = _vsc2_rt62_output__out;
-    {
-        if ( _vsc2_droop_controller1__IN_ENABLE == 1 )     {
-            if ( _vsc2_droop_controller1__IN_MICROGRID_STATUS == 1 )         {
-                if ( _vsc2_droop_controller1__IN_P0 > _vsc2_droop_controller1__p_ref ) _vsc2_droop_controller1__p_ref += 10 ;
-                if ( _vsc2_droop_controller1__IN_P0 < _vsc2_droop_controller1__p_ref ) _vsc2_droop_controller1__p_ref -= 10 ;
-                if ( _vsc2_droop_controller1__IN_Q0 > _vsc2_droop_controller1__q_ref ) _vsc2_droop_controller1__q_ref += 10 ;
-                if ( _vsc2_droop_controller1__IN_Q0 < _vsc2_droop_controller1__q_ref ) _vsc2_droop_controller1__q_ref -= 10 ;
-                setDroopPQ ( & _vsc2_droop_controller1__droop , _vsc2_droop_controller1__p_ref , _vsc2_droop_controller1__q_ref ) ;
-            }
-            else         {
-                setDroopPQ ( & _vsc2_droop_controller1__droop , 0.0 , 0.0 ) ;
-            }
-            calculateDroopPQ ( & _vsc2_droop_controller1__droop , _vsc2_droop_controller1__IN_V_DIR , _vsc2_droop_controller1__IN_V_QUAD , _vsc2_droop_controller1__IN_I_DIR , _vsc2_droop_controller1__IN_I_QUAD , & _vsc2_droop_controller1__p , & _vsc2_droop_controller1__q ) ;
-            executeDroopControl ( & _vsc2_droop_controller1__droop , & _vsc2_droop_controller1__v_ref , & _vsc2_droop_controller1__w_ref ) ;
-            _vsc2_droop_controller1__mod_V_alphaBeta = _vsc2_droop_controller1__ONE_BY_SQRT2 * sqrt ( _vsc2_droop_controller1__IN_V_DIR * _vsc2_droop_controller1__IN_V_DIR + _vsc2_droop_controller1__IN_V_QUAD * _vsc2_droop_controller1__IN_V_QUAD ) ;
-            _vsc2_droop_controller1__v_line = _vsc2_droop_controller1__v_ref + _vsc2_droop_controller1__IN_KV * ( 220 - _vsc2_droop_controller1__mod_V_alphaBeta ) ;
-            _vsc2_droop_controller1__v0 = _vsc2_droop_controller1__v0 + _vsc2_droop_controller1__v_line * _vsc2_droop_controller1__IN_KI * _vsc2_droop_controller1__TS_02KHZ ;
-            _vsc2_droop_controller1__OUT_V_REF = _vsc2_droop_controller1__v0 ;
-            _vsc2_droop_controller1__OUT_OMEGA_REF = _vsc2_droop_controller1__w_ref ;
-            _vsc2_droop_controller1__OUT_V0 = _vsc2_droop_controller1__v0 ;
-            _vsc2_droop_controller1__OUT_VRMS = _vsc2_droop_controller1__mod_V_alphaBeta ;
-        }
-        else     {
-            _vsc2_droop_controller1__OUT_V_REF = 0 ;
-            _vsc2_droop_controller1__OUT_OMEGA_REF = 0 ;
-            _vsc2_droop_controller1__OUT_V0 = 0 ;
-            _vsc2_droop_controller1__OUT_VRMS = 0 ;
-        }
-    }
-    // Generated from the component: VSC1.RT18.Input
-    _vsc1_rt18_output__state = _vsc1_droop_controller1__OUT_OMEGA_REF;
-    // Generated from the component: VSC1.RT24.Input
-    _vsc1_rt24_output__state = _vsc1_droop_controller1__OUT_V_REF;
-    // Generated from the component: VSC1.VRMS
-    HIL_OutAO(0x402e, (float)_vsc1_droop_controller1__OUT_VRMS);
-    // Generated from the component: VSC1.VZERO
-    HIL_OutAO(0x4032, (float)_vsc1_droop_controller1__OUT_V0);
-    // Generated from the component: VSC2.RT18.Input
-    _vsc2_rt18_output__state = _vsc2_droop_controller1__OUT_OMEGA_REF;
-    // Generated from the component: VSC2.RT24.Input
-    _vsc2_rt24_output__state = _vsc2_droop_controller1__OUT_V_REF;
-    // Generated from the component: VSC2.VRMS
-    HIL_OutAO(0x4044, (float)_vsc2_droop_controller1__OUT_VRMS);
-    // Generated from the component: VSC2.VZERO
-    HIL_OutAO(0x4048, (float)_vsc2_droop_controller1__OUT_V0);
-//@cmp.out.block.end
-    //////////////////////////////////////////////////////////////////////////
-    // Update block
-    //////////////////////////////////////////////////////////////////////////
-    //@cmp.update.block.start
-    // Generated from the component: VSC1.DROOP_CONTROLLER1
-    // Generated from the component: VSC2.DROOP_CONTROLLER1
     //@cmp.update.block.end
 }
 // ----------------------------------------------------------------------------------------

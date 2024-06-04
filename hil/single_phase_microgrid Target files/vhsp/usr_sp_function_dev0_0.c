@@ -32,31 +32,42 @@ extern "C" {
 #endif
 
 
+#include "resonant_control.h"
+
+
+#include "all_pass_filter.h"
+
+
+
+#include "improved_droop.h"
+
 #include "sogi_qsg.h"
 
-#include "all_pass_filter.h"
-
-
-#include "improved_droop.h"
-
-#include "all_pass_filter.h"
-
-
 
 #include "resonant_control.h"
 
 #include "improved_droop.h"
 
 
-#include "resonant_control.h"
 
+#include "all_pass_filter.h"
+#include "improved_droop.h"
 #include "resonant_control.h"
+#include "sogi_qsg.h"
 #include "rms.h"
-#include "improved_droop.h"
-#include "sogi_qsg.h"
 #include "virtual_impedance.h"
 #include "mrac.h"
+#include "power_control.h"
+
+#include "virtual_impedance.h"
+
 #include "all_pass_filter.h"
+#include "improved_droop.h"
+#include "resonant_control.h"
+#include "sogi_qsg.h"
+#include "rms.h"
+#include "virtual_impedance.h"
+#include "mrac.h"
 #include "power_control.h"
 
 #include "virtual_impedance.h"
@@ -64,18 +75,7 @@ extern "C" {
 #include "sogi_qsg.h"
 
 
-
-#include "resonant_control.h"
-#include "rms.h"
-#include "improved_droop.h"
-#include "sogi_qsg.h"
-#include "virtual_impedance.h"
-#include "mrac.h"
 #include "all_pass_filter.h"
-#include "power_control.h"
-
-#include "virtual_impedance.h"
-
 
 // ----------------------------------------------------------------------------------------                // generated using template:generic_macros.template-----------------------------------------
 /*********************** Macros (Inline Functions) Definitions ***************************/
@@ -687,9 +687,9 @@ struct _vsc1_apf__AllPassFilter {
     float  output_kminus2 ;
 }  ;
 const float   _vsc1_apf__TS = 0.0001;
-const float   _vsc1_apf__PHI = 3.351032163829113e-01;
+const float   _vsc1_apf__PHI = 2.192133540504878e-01;
 const float   _vsc1_apf__OMEGA = 3.769911184307752e+02;
-const float   _vsc1_apf__TAU = 9.523809523809524e-04;
+const float   _vsc1_apf__TAU = 8.333333333333334e-04;
 struct _vsc1_apf__AllPassFilter  _vsc1_apf__apf;
 float  _vsc1_apf__output = 0;
 
@@ -801,9 +801,9 @@ struct _vsc2_apf__AllPassFilter {
     float  output_kminus2 ;
 }  ;
 const float   _vsc2_apf__TS = 0.0001;
-const float   _vsc2_apf__PHI = 3.351032163829113e-01;
+const float   _vsc2_apf__PHI = 2.192133540504878e-01;
 const float   _vsc2_apf__OMEGA = 3.769911184307752e+02;
-const float   _vsc2_apf__TAU = 9.523809523809524e-04;
+const float   _vsc2_apf__TAU = 8.333333333333334e-04;
 struct _vsc2_apf__AllPassFilter  _vsc2_apf__apf;
 float  _vsc2_apf__output = 0;
 
@@ -5925,11 +5925,7 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
             _vsc1_voltage_controller__ref0 = _vsc1_voltage_controller__IN_V_REF - _vsc1_voltage_controller__IN_VL_DROP ;
             executeResonant ( & _vsc1_voltage_controller__rc0 , _vsc1_voltage_controller__ref0 , _vsc1_voltage_controller__IN_VC , & _vsc1_voltage_controller__u0 , & _vsc1_voltage_controller__err0 ) ;
             _vsc1_voltage_controller__u = _vsc1_voltage_controller__u0 ;
-            _vsc1_voltage_controller__u_bounded = _vsc1_voltage_controller__u ;
-            if ( ( _vsc1_voltage_controller__u * _vsc1_voltage_controller__u ) / sqrt ( _vsc1_voltage_controller__u * _vsc1_voltage_controller__u ) >= _vsc1_voltage_controller__U_BOUNDARY )         {
-                _vsc1_voltage_controller__u_bounded = _vsc1_voltage_controller__U_BOUNDARY * _vsc1_voltage_controller__u / sqrt ( _vsc1_voltage_controller__u * _vsc1_voltage_controller__u ) ;
-            }
-            _vsc1_voltage_controller__OUT_V_CTRL = _vsc1_voltage_controller__u_bounded ;
+            _vsc1_voltage_controller__OUT_V_CTRL = _vsc1_voltage_controller__u ;
             _vsc1_voltage_controller__OUT_V_REF = _vsc1_voltage_controller__ref0 ;
         }
         else     {
@@ -5949,11 +5945,7 @@ void TimerCounterHandler_1_user_sp_cpu0_dev0() {
             _vsc2_voltage_controller__ref0 = _vsc2_voltage_controller__IN_V_REF - _vsc2_voltage_controller__IN_VL_DROP ;
             executeResonant ( & _vsc2_voltage_controller__rc0 , _vsc2_voltage_controller__ref0 , _vsc2_voltage_controller__IN_VC , & _vsc2_voltage_controller__u0 , & _vsc2_voltage_controller__err0 ) ;
             _vsc2_voltage_controller__u = _vsc2_voltage_controller__u0 ;
-            _vsc2_voltage_controller__u_bounded = _vsc2_voltage_controller__u ;
-            if ( ( _vsc2_voltage_controller__u * _vsc2_voltage_controller__u ) / sqrt ( _vsc2_voltage_controller__u * _vsc2_voltage_controller__u ) >= _vsc2_voltage_controller__U_BOUNDARY )         {
-                _vsc2_voltage_controller__u_bounded = _vsc2_voltage_controller__U_BOUNDARY * _vsc2_voltage_controller__u / sqrt ( _vsc2_voltage_controller__u * _vsc2_voltage_controller__u ) ;
-            }
-            _vsc2_voltage_controller__OUT_V_CTRL = _vsc2_voltage_controller__u_bounded ;
+            _vsc2_voltage_controller__OUT_V_CTRL = _vsc2_voltage_controller__u ;
             _vsc2_voltage_controller__OUT_V_REF = _vsc2_voltage_controller__ref0 ;
         }
         else     {

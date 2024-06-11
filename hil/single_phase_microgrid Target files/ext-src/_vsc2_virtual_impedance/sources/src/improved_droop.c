@@ -31,6 +31,7 @@ void initDroop(ImprovedDroop *droop, float ts, float v0, float w0, float p_max, 
   // improved droop variables
   droop->ki = ki;
   droop->kv = kv;
+  droop->kq = droop->n * droop->kv;
   droop->is_islanded = 1;
   // integrator variables
   droop->phi_integral = 0.5 * droop->sampling_time;
@@ -55,15 +56,13 @@ void executeDroop(ImprovedDroop *droop, float v_alpha, float v_beta, float i_alp
   droop->q_kminus1 = q;
   droop->qf_kminus1 = q_filtered;
 
-  // compute classical droop voltage and frequency variation
-  float delta_v = droop->n * (droop->q0 - q_filtered);
-  float delta_w = droop->m * (droop->p0 - p_filtered);
-
   // handle voltage/kVAr control loop
   float vout = 0;
+  float v_improved = 0;
   if (droop->is_islanded == 1)
   {
     // classical method
+    float delta_v = droop->n * (q_filtered - droop->q0);
     vout = droop->v0 + delta_v;
     droop->vin_kminus1 = vout;
     droop->vout_kminus1 = vout;
@@ -71,15 +70,15 @@ void executeDroop(ImprovedDroop *droop, float v_alpha, float v_beta, float i_alp
   else
   {
     // improved droop with two integrator
-    float v_improved = droop->kv * (droop->v0 - computeVrms(v_alpha, v_beta));
-    float v = v_improved + delta_v;
-    vout = computeIntegral(droop, v, droop->vin_kminus1, droop->vout_kminus1, droop->ki);
-    droop->vin_kminus1 = v;
+    v_improved = droop->kv * (droop->v0 - computeVrms(v_alpha, v_beta)) - droop->kq * (q_filtered - droop->q0);
+    vout = computeIntegral(droop, v_improved, droop->vin_kminus1, droop->vout_kminus1, droop->ki);
+    droop->vin_kminus1 = v_improved;
     droop->vout_kminus1 = vout;
   }
 
   // handle frequency/kW control loop
-  float w = droop->w0 + delta_w;
+  float delta_w = droop->m * (p_filtered - droop->p0);
+  float w = droop->w0 - delta_w;
   float theta_out = computeIntegral(droop, w, droop->w_kminus1, droop->theta_kminus1, 1.0);
   if (theta_out >= TWOPI)
     theta_out -= TWOPI;
@@ -88,8 +87,8 @@ void executeDroop(ImprovedDroop *droop, float v_alpha, float v_beta, float i_alp
 
   // output results
   *v = SQRT2 * vout * sin(theta_out);
-  *pf = p_filtered;
-  *qf = q_filtered;
+  *pf = p_filtered; // p_filtered;
+  *qf = q_filtered; // q_filtered;
 }
 
 void setP0(ImprovedDroop *droop, float p0)
@@ -120,6 +119,13 @@ void setKi(ImprovedDroop *droop, float ki)
 void setKv(ImprovedDroop *droop, float kv)
 {
   droop->kv = kv;
+  if(kv > 0)
+  {
+    droop->kq = droop->n * droop->kv;
+  }else{
+    droop->kq = droop->n;
+  }
+    
 }
 
 void setDeltaV(ImprovedDroop *droop, float delta_v)
@@ -164,10 +170,10 @@ extern inline float computeLPF(ImprovedDroop *droop, float input, float input_km
 
 extern inline float computeIntegral(ImprovedDroop *droop, float input, float input_kminus1, float output_kminus1, float ki)
 {
-  return (ki * droop->phi_integral * input + ki * droop->phi_integral * input_kminus1 + output_kminus1);
+  return ((ki * droop->phi_integral) * (input + input_kminus1) + output_kminus1);
 }
 
 extern inline float computeVrms(float v_alpha, float v_beta)
 {
-  return (ONE_BY_SQRT2 * sqrt(v_alpha*v_alpha + v_beta*v_beta));
+  return (ONE_BY_SQRT2 * sqrt(v_alpha * v_alpha + v_beta * v_beta));
 }

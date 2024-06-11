@@ -79,56 +79,6 @@
       "problemMatcher": "$gcc"
     },
     {
-      "label": "object_power_control",
-      "type": "shell",
-      "command": "gcc",
-      "args": [
-        "-w",
-        "-c",
-        "${workspaceFolder}/src/power_control.c",
-        "-o",
-        "${workspaceFolder}/output/VHIL/power_control.o"
-      ],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": "$gcc"
-    },
-    {
-      "label": "object_rms",
-      "type": "shell",
-      "command": "gcc",
-      "args": [
-        "-w",
-        "-c",
-        "${workspaceFolder}/src/rms.c",
-        "-o",
-        "${workspaceFolder}/output/VHIL/rms.o"
-      ],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": "$gcc"
-    },
-    {
       "label": "object_sogi_qsg",
       "type": "shell",
       "command": "gcc",
@@ -204,31 +154,6 @@
       "problemMatcher": "$gcc"
     },
     {
-      "label": "object_apf",
-      "type": "shell",
-      "command": "gcc",
-      "args": [
-        "-w",
-        "-c",
-        "${workspaceFolder}/src/all_pass_filter.c",
-        "-o",
-        "${workspaceFolder}/output/VHIL/all_pass_filter.o"
-      ],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": "$gcc"
-    },
-    {
       "label": "dll_resonant_control",
       "type": "shell",
       "command": "gcc",
@@ -237,54 +162,6 @@
         "-o",
         "${workspaceFolder}/output/VHIL/lib_resonant_control.dll",
         "${workspaceFolder}/output/VHIL/resonant_control.o"
-      ],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": "$gcc"
-    },
-    {
-      "label": "dll_power_control",
-      "type": "shell",
-      "command": "gcc",
-      "args": [
-        "-shared",
-        "-o",
-        "${workspaceFolder}/output/VHIL/lib_power_control.dll",
-        "${workspaceFolder}/output/VHIL/power_control.o"
-      ],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": "$gcc"
-    },
-    {
-      "label": "dll_rms",
-      "type": "shell",
-      "command": "gcc",
-      "args": [
-        "-shared",
-        "-o",
-        "${workspaceFolder}/output/VHIL/lib_rms.dll",
-        "${workspaceFolder}/output/VHIL/rms.o"
       ],
       "group": "build",
       "presentation": {
@@ -373,30 +250,6 @@
       "problemMatcher": "$gcc"
     },
     {
-      "label": "dll_apf",
-      "type": "shell",
-      "command": "gcc",
-      "args": [
-        "-shared",
-        "-o",
-        "${workspaceFolder}/output/VHIL/lib_all_pass_filter.dll",
-        "${workspaceFolder}/output/VHIL/all_pass_filter.o"
-      ],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": "$gcc"
-    },
-    {
       "type": "shell",
       "label": "Compilar para VHIL",
       "command": "echo",
@@ -407,18 +260,12 @@
       "dependsOn": [
         "object_resonant_control",
         "dll_resonant_control",
-        "object_power_control",
-        "dll_power_control",
-        "object_rms",
-        "dll_rms",
         "object_sogi_qsg",
         "dll_sogi_qsg",
         "object_droop",
         "dll_droop",
         "object_virtual_impedance",
-        "dll_virtual_impedance",
-        "object_apf",
-        "dll_apf",
+        "dll_virtual_impedance"
       ],
       "group": {
         "kind": "test",

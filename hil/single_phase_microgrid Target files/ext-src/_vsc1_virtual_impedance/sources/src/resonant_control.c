@@ -1,3 +1,4 @@
+#include <math.h>
 #include "resonant_control.h"
 
 /// @brief initializes a resonant controller
@@ -39,6 +40,7 @@ void resonantControlInitMatlab(ResonantController *rc, float k1, float k2, float
 {
   // execution rate
   rc->sampling_time = 0;
+  rc->output_boundary = 999999;
   // characteristic transfer function coefficients
   rc->kp = 0;
   rc->zero_dumping = 0;
@@ -78,7 +80,7 @@ void setResonantGains(ResonantController *rc, float kp, float zero_dumping, floa
   rc->k3 = (aux_a - aux_b + aux_e1) * divider;
   rc->k4 = 2 * (-aux_c + aux_e2) * divider;
   rc->k5 = (aux_c - aux_d + aux_e2) * divider;
-  //printf("k1: %.4f k2: %.4f k3: %.4f k4: %.4f k5: %.4f\n", rc->k1, rc->k2, rc->k3, rc->k4, rc->k5);
+  // printf("k1: %.4f k2: %.4f k3: %.4f k4: %.4f k5: %.4f\n", rc->k1, rc->k2, rc->k3, rc->k4, rc->k5);
 }
 
 /// @brief
@@ -116,6 +118,14 @@ void setResonantOmega0(ResonantController *rc, float omega0)
 
 /// @brief
 /// @param rc
+/// @param output_boundary
+void setOutputBoundary(ResonantController *rc, float output_boundary)
+{
+  rc->output_boundary = output_boundary;
+}
+
+/// @brief
+/// @param rc
 /// @param reference
 /// @param measurement
 /// @return control action
@@ -125,12 +135,20 @@ void executeResonant(ResonantController *rc, float reference, float measurement,
   float err = reference - measurement;
   // control action calculation
   float u = rc->k1 * err + rc->k2 * rc->err_kminus1 + rc->k3 * rc->err_kminus2 - rc->k4 * rc->u_kminus1 - rc->k5 * rc->u_kminus2;
+  // bounded output
+  float u_bounded = u;
+  float uu = u * u;
+  float sqrt_uu = sqrt(uu);
+  if ((uu / sqrt_uu) >= rc->output_boundary)
+  {
+    u_bounded = (rc->output_boundary * u) / sqrt_uu;
+  }
   // store next iterations values
   rc->err_kminus2 = rc->err_kminus1;
   rc->err_kminus1 = err;
   rc->u_kminus2 = rc->u_kminus1;
-  rc->u_kminus1 = u;
+  rc->u_kminus1 = u_bounded;
   // return control action
   *erro = err;
-  *ctrl_action = u;
+  *ctrl_action = u_bounded;
 }

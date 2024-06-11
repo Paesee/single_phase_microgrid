@@ -5,6 +5,7 @@
 typedef struct {
   // sampling time
   float sampling_time;
+  float output_boundary;
   // characteristic transfer function coefficients
   float kp;
   float zero_dumping;
@@ -33,6 +34,7 @@ void setResonantKp(ResonantController *rc, float kp);
 void setResonantZeroDumping(ResonantController *rc, float zero_dumping);
 void setResonantPoleDumping(ResonantController *rc, float pole_dumping);
 void setResonantOmega0(ResonantController *rc, float omega0);
+void setOutputBoundary(ResonantController *rc, float output_boundary);
 void executeResonant(ResonantController *rc, float reference, float measurement, float *ctrl_action, float *erro);
 
 #endif

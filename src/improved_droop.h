@@ -39,6 +39,7 @@ typedef struct ImprovedDroop
   // improved droop variables
   float ki;
   float kv;
+  float kq;
   int is_islanded;
 
   // integrator variables

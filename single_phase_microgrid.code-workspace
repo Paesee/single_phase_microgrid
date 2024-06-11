@@ -7,7 +7,9 @@
   "settings": {
     "files.associations": {
       "*.c": "c",
-      "improved_droop.h": "c"
+      "improved_droop.h": "c",
+      "cmath": "c",
+      "complex": "c"
     }
   }
 }

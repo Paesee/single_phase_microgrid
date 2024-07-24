@@ -3,20 +3,20 @@ Droop Controller with Two Integrators
 
 Copyright 2024 Vítor Paese De Carli
 
-This file is part of MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid.
+This file is part of Cascaded Control for Grid-Forming Inverters applied to Single-Phase Microgrid.
 
-MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid is free software: you can redistribute it and/or modify
+Cascaded Control for Grid-Forming Inverters applied to Single-Phase Microgrid is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid is distributed in the hope that it will be useful,
+Cascaded Control for Grid-Forming Inverters applied to Single-Phase Microgrid is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid.  If not, see <https://www.gnu.org/licenses/>6.
+along with Cascaded Control for Grid-Forming Inverters applied to Single-Phase Microgrid.  If not, see <https://www.gnu.org/licenses/>6.
 */
 
 // include its header file

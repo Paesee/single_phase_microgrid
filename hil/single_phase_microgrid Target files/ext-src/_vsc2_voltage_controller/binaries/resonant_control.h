@@ -1,24 +1,38 @@
+/*
+Proportional Resonant Controller
+
+Copyright 2024 Vítor Paese De Carli
+
+This file is part of MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid.
+
+MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MRAC for Grid-Forming Inverters applied to Single-Phase Microgrid.  If not, see <https://www.gnu.org/licenses/>6.
+*/
+
 #ifndef RESONANT_CONTROL_H
 #define RESONANT_CONTROL_H
 
-// Ressonant Controller Struct
+/// @brief Proportional Resonant Controller
 typedef struct {
   // sampling time
-  float sampling_time;
+  float ts;
   float output_boundary;
-  // characteristic transfer function coefficients
-  float kp;
-  float zero_dumping;
-  float pole_dumping;
-  float omega0;
   // recurrence equation gains
-  float aux_4ts2;
-  float aux_4ts;
-  float k1;
-  float k2;
-  float k3;
-  float k4;
-  float k5;
+  float alpha0;
+  float alpha1;
+  float alpha2;
+  float beta1;
+  float beta2;
   // past control variables
   float err_kminus1;
   float err_kminus2;
@@ -26,15 +40,10 @@ typedef struct {
   float u_kminus2;
 } ResonantController;
 
-// Ressonant Controller functions
-void resonantInit(ResonantController *rc, float kp, float zero_dumping, float pole_dumping, float omega0, float ts);
-void resonantControlInitMatlab(ResonantController *rc, float k1, float k2, float k3, float k4, float k5);
-void setResonantGains(ResonantController *rc, float kp, float zero_dumping, float pole_dumping, float omega0);
-void setResonantKp(ResonantController *rc, float kp);
-void setResonantZeroDumping(ResonantController *rc, float zero_dumping);
-void setResonantPoleDumping(ResonantController *rc, float pole_dumping);
-void setResonantOmega0(ResonantController *rc, float omega0);
+void resonantInit(ResonantController *rc, float kp, float zeta_z, float zeta_p, float w0, float ts);
+void resonantControlInitMatlab(ResonantController *rc, float alpha0, float alpha1, float alpha2, float beta1, float beta2);
+void setResonantGains(ResonantController *rc, float kp, float zeta_z, float zeta_p, float w0);
 void setOutputBoundary(ResonantController *rc, float output_boundary);
-void executeResonant(ResonantController *rc, float reference, float measurement, float *ctrl_action, float *erro);
+void executeResonant(ResonantController *rc, float ref, float meas, float *ctrl);
 
 #endif

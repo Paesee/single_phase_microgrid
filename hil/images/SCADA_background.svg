@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="24.260946"
-     inkscape:cx="272.8047"
-     inkscape:cy="200.26012"
+     inkscape:zoom="1.5163091"
+     inkscape:cx="306.99545"
+     inkscape:cy="105.18963"
      inkscape:window-width="1536"
      inkscape:window-height="793"
      inkscape:window-x="-8"
      inkscape:window-y="-7"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g14" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs1" />
   <g
@@ -782,7 +782,7 @@
          y="266.76871"
          x="453.04337"
          id="tspan15918-9-4-2-4-2"
-         sodipodi:role="line">PoC</tspan></text>
+         sodipodi:role="line">POI</tspan></text>
     <path
        style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.32284;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
        d="m 466.92452,226.4583 v 13.10241"
@@ -798,7 +798,7 @@
          y="351.20581"
          x="452.86374"
          id="tspan15918-9-4-2-4-2-9"
-         sodipodi:role="line">PoC</tspan></text>
+         sodipodi:role="line">POI</tspan></text>
     <path
        style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.32284;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
        d="m 466.74489,306.75337 v 13.10239"
